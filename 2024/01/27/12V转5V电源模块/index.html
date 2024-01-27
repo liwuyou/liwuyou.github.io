@@ -20,28 +20,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>模电 - 无 忧</title>
+  <title>12V转5V电源模块 - 无 忧</title>
 
   
-    <meta name="description" content="信号时间和数值  时间连续，数值连续（模拟信号） 时间不连续，数值连续（抽样信号） 时间连续，数值不连续（脉冲信号） 时间不连续，数值不连续（数字信号）  常用半导体器件基础知识 导体 半导体 绝缘体 常见半导体，硅(si)和锗(ge)四价元素 半导体分类，本征半导体与杂质半导体 载流子有自由电子与空穴 N型半导体(五价磷)与P型半导体(三价硼)  重点 PN节硅(si)原子结构  单晶硅齐纳击穿">
+    <meta name="description" content="前言看了B站孙老师的视频，受益匪浅，决定设计自己的12V转5V的电源模块采用同步整流芯片TPS54302，改芯片数据手册如下  https:&#x2F;&#x2F;www.ti.com&#x2F;cn&#x2F;lit&#x2F;ds&#x2F;symlink&#x2F;tps54302.pdf?ts&#x3D;1706321372159&amp;ref_url&#x3D;https%253A%252F%252Fitem.szlcsc.com%252F  2 4.5V 至 28V 输入">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模电">
-<meta property="og:url" content="http://example.com/2024/01/20/%E6%A8%A1%E7%94%B5/index.html">
+<meta property="og:title" content="12V转5V电源模块">
+<meta property="og:url" content="http://example.com/2024/01/27/12V%E8%BD%AC5V%E7%94%B5%E6%BA%90%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="信号时间和数值  时间连续，数值连续（模拟信号） 时间不连续，数值连续（抽样信号） 时间连续，数值不连续（脉冲信号） 时间不连续，数值不连续（数字信号）  常用半导体器件基础知识 导体 半导体 绝缘体 常见半导体，硅(si)和锗(ge)四价元素 半导体分类，本征半导体与杂质半导体 载流子有自由电子与空穴 N型半导体(五价磷)与P型半导体(三价硼)  重点 PN节硅(si)原子结构  单晶硅齐纳击穿">
+<meta property="og:description" content="前言看了B站孙老师的视频，受益匪浅，决定设计自己的12V转5V的电源模块采用同步整流芯片TPS54302，改芯片数据手册如下  https:&#x2F;&#x2F;www.ti.com&#x2F;cn&#x2F;lit&#x2F;ds&#x2F;symlink&#x2F;tps54302.pdf?ts&#x3D;1706321372159&amp;ref_url&#x3D;https%253A%252F%252Fitem.szlcsc.com%252F  2 4.5V 至 28V 输入">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://s11.ax1x.com/2024/01/20/pFEoyp6.png">
-<meta property="og:image" content="https://s11.ax1x.com/2024/01/20/pFE7mZQ.png">
-<meta property="article:published_time" content="2024-01-20T06:06:29.000Z">
-<meta property="article:modified_time" content="2024-01-20T09:37:21.365Z">
+<meta property="og:image" content="https://s11.ax1x.com/2024/01/27/pFnRGAs.png">
+<meta property="og:image" content="https://s11.ax1x.com/2024/01/27/pFnfnOS.png">
+<meta property="og:image" content="https://s11.ax1x.com/2024/01/27/pFnR4De.png">
+<meta property="og:image" content="https://s11.ax1x.com/2024/01/27/pFnRTUA.png">
+<meta property="og:image" content="https://s11.ax1x.com/2024/01/27/pFnf1Fs.png">
+<meta property="og:image" content="https://s11.ax1x.com/2024/01/27/pFnfJS0.png">
+<meta property="article:published_time" content="2024-01-27T04:57:04.000Z">
+<meta property="article:modified_time" content="2024-01-27T05:49:58.121Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="课程">
+<meta property="article:tag" content="pcb设计">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s11.ax1x.com/2024/01/20/pFEoyp6.png">
+<meta name="twitter:image" content="https://s11.ax1x.com/2024/01/27/pFnRGAs.png">
   
   
   
-  <meta name="keywords" content="课程">
+  <meta name="keywords" content="pcb设计">
 
   <!-- feed -->
   
@@ -84,7 +88,7 @@
 
 <div class="widgets">
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">模电</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7"><span class="toc-text">信号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%99%A8%E4%BB%B6"><span class="toc-text">常用半导体器件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-text">基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%8D%E7%82%B9-PN%E8%8A%82"><span class="toc-text">重点 PN节</span></a></li></ol></li></ol></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">12V转5V电源模块</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%8D%E5%8E%8B%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86"><span class="toc-text">降压电路原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%AF%E7%89%87%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-text">芯片原理图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%B7%B1%E7%94%BB%E7%9A%84%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-text">自己画的原理图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%89%88pcb%E8%AE%BE%E8%AE%A1"><span class="toc-text">第一版pcb设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E9%9D%A2"><span class="toc-text">正面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E9%9D%A2"><span class="toc-text">反面</span></a></li></ol></li></ol></div></div></widget>
 
 
 
@@ -103,39 +107,29 @@
 
 
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
-    <span>Posted on&nbsp;<time datetime="2024-01-20T06:06:29.000Z">2024-01-20</time></span>
+    <span>Posted on&nbsp;<time datetime="2024-01-27T04:57:04.000Z">2024-01-27</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2024-01-20T09:37:21.365Z">2024-01-20</time></span>
+    <span>Updated on&nbsp;<time datetime="2024-01-27T05:49:58.121Z">2024-01-27</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
-<h1 class="article-title"><span>模电</span></h1>
-<h2 id="信号"><a href="#信号" class="headerlink" title="信号"></a>信号</h2><p>时间和数值</p>
+<h1 class="article-title"><span>12V转5V电源模块</span></h1>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>看了B站孙老师的视频，受益匪浅，决定设计自己的12V转5V的电源模块<br>采用同步整流芯片TPS54302，改芯片数据手册如下<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFnRGAs"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/27/pFnRGAs.png"/></div></div></a></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.ti.com/cn/lit/ds/symlink/tps54302.pdf?ts=1706321372159&ref_url=https%253A%252F%252Fitem.szlcsc.com%252F">https://www.ti.com/cn/lit/ds/symlink/tps54302.pdf?ts=1706321372159&amp;ref_url=https%253A%252F%252Fitem.szlcsc.com%252F</a></p>
+</blockquote>
+<p>2 4.5V 至 28V 输入、3A 输出、EMI 友好型<br>同步降压转换</p>
+<h2 id="降压电路原理"><a href="#降压电路原理" class="headerlink" title="降压电路原理"></a>降压电路原理</h2><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFnfnOS"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/27/pFnfnOS.png"/></div></div></a></p>
+<h2 id="芯片原理图"><a href="#芯片原理图" class="headerlink" title="芯片原理图"></a>芯片原理图</h2><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFnR4De"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/27/pFnR4De.png"/></div></div></a></p>
+<h2 id="自己画的原理图"><a href="#自己画的原理图" class="headerlink" title="自己画的原理图"></a>自己画的原理图</h2><p>由于实际封装与原理图不一致，自己画的并没有芯片原理图那么规整<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFnRTUA"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/27/pFnRTUA.png"/></div></div></a></p>
+<h2 id="第一版pcb设计"><a href="#第一版pcb设计" class="headerlink" title="第一版pcb设计"></a>第一版pcb设计</h2><p>设计注意要点</p>
 <ul>
-<li>时间连续，数值连续（模拟信号）</li>
-<li>时间不连续，数值连续（抽样信号）</li>
-<li>时间连续，数值不连续（脉冲信号）</li>
-<li>时间不连续，数值不连续（数字信号）</li>
+<li>线宽</li>
+<li>避免直角走线</li>
+<li>元件选型</li>
 </ul>
-<h2 id="常用半导体器件"><a href="#常用半导体器件" class="headerlink" title="常用半导体器件"></a>常用半导体器件</h2><h3 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h3><ul>
-<li>导体 半导体 绝缘体</li>
-<li>常见半导体，硅(si)和锗(ge)四价元素</li>
-<li>半导体分类，本征半导体与杂质半导体</li>
-<li>载流子有自由电子与空穴</li>
-<li>N型半导体(五价磷)与P型半导体(三价硼)</li>
-</ul>
-<h4 id="重点-PN节"><a href="#重点-PN节" class="headerlink" title="重点 PN节"></a>重点 PN节</h4><p>硅(si)<br>原子结构<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFEoyp6"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/20/pFEoyp6.png"/></div></div></a> </p>
-<p>单晶硅<br>齐纳击穿与雪崩击穿<br>扩散运动与漂移运动<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFE7mZQ"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/20/pFE7mZQ.png"/></div></div></a><br>正向特征</p>
-<ul>
-<li>截止区（死区）</li>
-<li>导通区</li>
-<li>过流区</li>
-</ul>
-<p>反向特征</p>
-<ul>
-<li>反向饱和区</li>
-<li>反向击穿区</li>
-</ul>
+<h3 id="正面"><a href="#正面" class="headerlink" title="正面"></a>正面</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFnf1Fs"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/27/pFnf1Fs.png"/></div></div></a></p>
+<h3 id="反面"><a href="#反面" class="headerlink" title="反面"></a>反面</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFnfJS0"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/01/27/pFnfJS0.png"/></div></div></a></p>
 
 
 
@@ -149,7 +143,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2024/01/27/12V%E8%BD%AC5V%E7%94%B5%E6%BA%90%E6%A8%A1%E5%9D%97/">12V转5V电源模块</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/01/11/%E6%95%B0%E7%94%B5/">数电</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/01/20/%E6%A8%A1%E7%94%B5/">模电</a></div></section></div>
 
 
 
