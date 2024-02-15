@@ -20,22 +20,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>无 忧</title>
+  <title>陀螺仪的工作原理 - 无 忧</title>
 
   
-    <meta name="description" content="无忧的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="无 忧">
-<meta property="og:url" content="http://example.com/page/4/index.html">
+    <meta name="description" content="陀螺仪的分类提供位置与角速度的装置     机械陀螺仪 光学陀螺仪  测量各部分压力 光学陀螺仪，计算接受的合成光束与初始光束的相位差，算得偏转量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="陀螺仪的工作原理">
+<meta property="og:url" content="http://example.com/2024/02/15/%E9%99%80%E8%9E%BA%E4%BB%AA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="无忧的博客">
+<meta property="og:description" content="陀螺仪的分类提供位置与角速度的装置     机械陀螺仪 光学陀螺仪  测量各部分压力 光学陀螺仪，计算接受的合成光束与初始光束的相位差，算得偏转量">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s11.ax1x.com/2024/02/15/pFGAu6O.png">
+<meta property="og:image" content="https://s11.ax1x.com/2024/02/15/pFGAQne.png">
+<meta property="article:published_time" content="2024-02-15T05:19:18.000Z">
+<meta property="article:modified_time" content="2024-02-15T05:35:41.070Z">
 <meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
+<meta property="article:tag" content="其他">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s11.ax1x.com/2024/02/15/pFGAu6O.png">
   
   
   
-  
+  <meta name="keywords" content="其他">
 
   <!-- feed -->
   
@@ -62,8 +68,10 @@
   
 
 
+
+
   <div class='l_body' id='start'>
-    <aside class='l_left' layout=''>
+    <aside class='l_left' layout='post'>
     
 
   
@@ -75,77 +83,58 @@
 
 
 <div class="widgets">
-<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/02/15/%E9%99%80%E8%9E%BA%E4%BB%AA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"><span class="title">陀螺仪的工作原理</span></a><a class="item title" href="/2024/01/01/%E7%94%B5%E5%AD%90%E8%AE%BE%E8%AE%A1%E5%AE%9E%E8%AE%AD%E5%B0%8F%E7%BB%84%E8%AE%A1%E5%88%92/"><span class="title">电子设计实训小组计划</span></a><a class="item title" href="/2024/01/29/%E5%9F%BA%E7%A1%80%E7%94%B5%E6%B0%94%E7%9F%A5%E8%AF%86%E9%83%A8%E5%88%86%E7%BB%BC%E5%90%88/"><span class="title">基础电气知识部分综合</span></a><a class="item title" href="/2024/01/11/%E6%95%B0%E7%94%B5/"><span class="title">数电</span></a><a class="item title" href="/2024/01/27/12V%E8%BD%AC5V%E7%94%B5%E6%BA%90%E6%A8%A1%E5%9D%97/"><span class="title">12V转5V电源模块</span></a></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">陀螺仪的工作原理</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%99%80%E8%9E%BA%E4%BB%AA%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">陀螺仪的分类</span></a></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
 
 
 </div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
-  
-
-<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://z1.ax1x.com/2023/12/13/pifGaLR.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div></header>
-
-
 
       
 
 
-  
 
-<div class="nav-wrap"><nav class="sub post cap"><a class="active" href="/">Recent</a><a href="/tags">Tags</a><a href="/archives">Archives</a></nav></div>
-  <div class="post-list post"><a class="post-card post " href="/2023/07/30/arduino%E5%B0%8F%E9%A1%B9%E7%9B%AE2%E2%80%94%E2%80%94%E7%94%B5%E5%8E%8B%E8%A1%A8/">
-<article class="md-text"><h2 class="post-title">arduino小项目2——电压表</h2><div class="excerpt"><p>难度系数：★使用工具，arduino uno，面包板，杜邦线，4寸0.96寸I2C小屏幕，小按钮
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2024-02-15T05:19:18.000Z">2024-02-15</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2024-02-15T05:35:41.070Z">2024-02-15</time></span>
+    </div></div></div>
 
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546 #include &lt;U8g2lib.h&gt; U8G2_SSD1306_128X64_NONAME_F_SW_I2C ...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2023-07-30T11:51:07.000Z">2023-07-30</time></span></div></article>
-</a><a class="post-card post " href="/2023/07/30/arduino%E5%B0%8F%E9%A1%B9%E7%9B%AE1%E2%80%94%E2%80%94%E5%B0%8F%E6%97%B6%E9%92%9F/">
-<article class="md-text"><h2 class="post-title">arduino小项目1——小时钟</h2><div class="excerpt"><p>难度系数：★使用工具，arduino uno，面包板，杜邦线，4寸0.96寸I2C小屏幕
-接线图，文字描述。单片机上的A4接小屏幕上的SDA，A5接SCL。
+<article class='md-text content post'>
+<h1 class="article-title"><span>陀螺仪的工作原理</span></h1>
+<h2 id="陀螺仪的分类"><a href="#陀螺仪的分类" class="headerlink" title="陀螺仪的分类"></a>陀螺仪的分类</h2><p>提供位置与角速度的装置   </p>
+<ul>
+<li>机械陀螺仪</li>
+<li>光学陀螺仪</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFGAu6O"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/02/15/pFGAu6O.png"/></div></div></a><br>测量各部分压力</p>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFGAQne"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s11.ax1x.com/2024/02/15/pFGAQne.png"/></div></div></a><br>光学陀螺仪，计算接受的合成光束与初始光束的相位差，算得偏转量</p>
 
 
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include &lt;MsTimer2...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2023-07-30T11:40:24.000Z">2023-07-30</time></span></div></article>
-</a><a class="post-card post " href="/2023/07/26/markdown%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%AF%AD%E6%B3%95/">
-<article class="md-text"><h2 class="post-title">markdown基本介绍与语法</h2><div class="excerpt"><p>markdown是什么？Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia、简书等
-我为什么使用markdown写个人博客需要，且markdown使用简单，b...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2023-07-26T13:30:15.000Z">2023-07-26</time></span></div></article>
-</a><a class="post-card post " href="/2023/07/24/ros%E8%BD%A6%E5%9F%BA%E6%9C%AC%E5%AD%A6%E4%B9%A0/">
-<article class="md-text"><h2 class="post-title">ros车基本学习（基于讯飞车）</h2><div class="excerpt"><p>ros是什么（个人理解）ros是个机器人操作系统，可以在上面实现对机器人的操作，好比一个工作台，别人给你造好，直接使用上面的工具方便造自己的作品.
-我为什么学ROS竞赛需要,智能车讯飞比赛及人工智能比赛甚至电赛控制类赛题也能用到
-节系统是乌班图18的系统。
-123456//安装C加加编译器sudo apt-get install g++//安装python解释器sudo apt-get in...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2023-07-24T14:53:45.000Z">2023-07-24</time></span></div></article>
-</a><a class="post-card post " href="/2023/07/24/%E6%88%91%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88/">
-<article class="md-text"><h2 class="post-title">我的技术栈</h2><div class="excerpt"><p>我的技术栈语言类：   
 
-c++&#x2F;c (较熟练)
-python(基础)
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
 
-软件类：
+</article>
 
-ros基础
-51单片机
-stc32单片机
-arduino单片机
-linux基础
-eps32(未学)
-stm32(未学)
-网络基础
-树莓派(未学)
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/01/29/%E5%9F%BA%E7%A1%80%E7%94%B5%E6%B0%94%E7%9F%A5%E8%AF%86%E9%83%A8%E5%88%86%E7%BB%BC%E5%90%88/">基础电气知识部分综合</a></div></section></div>
 
-硬件类：
 
-solidwords&#x2F;3d打印
-简单的pcb板绘制
-简单的电路板焊接
 
-</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2023-07-24T08:17:00.000Z">2023-07-24</time></span></div></article>
-</a></div>
-  
-  <div class='paginator-wrap dis-select'>
-  <a class="extend prev" rel="prev" href="/page/3/"></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><span class="extend next" rel="next"></span>
-  </div>
+
 
 
 
