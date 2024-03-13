@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>数电重置版 - 无 忧</title>
+
+  
+    <meta name="description" content="我希望在3月20号之前学完数电，开始挑战！ 整体逻辑框架图 数制与码制10进制转2进制 2进制转10进制 10进制转8421BCD互转    逻辑代数基础异或与同或及其常见与或非 基本公式与常用公式 反演定理与对偶定理 卡诺图 最小项及其无关项无关项（d表示，卡诺图中用X）  任意项 约束项  目的：矩形圈最大，矩形数量最少 化简 转化  半导体电路分类存储大小  存储单元（一个字节） 静态存储单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数电重置版">
+<meta property="og:url" content="http://example.com/2024/03/08/%E6%95%B0%E7%94%B5%E9%87%8D%E7%BD%AE%E7%89%88/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="我希望在3月20号之前学完数电，开始挑战！ 整体逻辑框架图 数制与码制10进制转2进制 2进制转10进制 10进制转8421BCD互转    逻辑代数基础异或与同或及其常见与或非 基本公式与常用公式 反演定理与对偶定理 卡诺图 最小项及其无关项无关项（d表示，卡诺图中用X）  任意项 约束项  目的：矩形圈最大，矩形数量最少 化简 转化  半导体电路分类存储大小  存储单元（一个字节） 静态存储单">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/08/pFs8uLR.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/11/pF6sWYF.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/11/pF6sRFU.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/12/pF6yktS.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/13/pFcQ1X9.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/13/pFc81C6.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/13/pFcTWj0.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/14/pFc7nUg.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/14/pFc7u5Q.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/14/pFc7Q8s.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/14/pFc7U54.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/14/pFc7wG9.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/14/pFc702R.png">
+<meta property="og:image" content="https://www.freeimg.cn/i/2024/03/14/65f1d5e0ad608.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/10/pFyBZnK.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/10/pFyvg4U.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/10/pFyvb4O.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/10/pFyvfgJ.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/10/pFyvzDI.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/11/pF60iuV.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/11/pF60ug1.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/11/pF6DmOx.jpg">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/11/pF6DMTO.jpg">
+<meta property="article:published_time" content="2024-03-08T03:10:12.000Z">
+<meta property="article:modified_time" content="2024-03-13T16:36:14.757Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s21.ax1x.com/2024/03/08/pFs8uLR.jpg">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://z1.ax1x.com/2023/12/13/pifGaLR.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://z1.ax1x.com/2023/12/13/pifGaLR.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">数电重置版</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E9%80%BB%E8%BE%91%E6%A1%86%E6%9E%B6%E5%9B%BE"><span class="toc-text">整体逻辑框架图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E4%B8%8E%E7%A0%81%E5%88%B6"><span class="toc-text">数制与码制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E8%BF%9B%E5%88%B6%E8%BD%AC2%E8%BF%9B%E5%88%B6"><span class="toc-text">10进制转2进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E8%BF%9B%E5%88%B6%E8%BD%AC10%E8%BF%9B%E5%88%B6"><span class="toc-text">2进制转10进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E8%BF%9B%E5%88%B6%E8%BD%AC8421BCD%E4%BA%92%E8%BD%AC"><span class="toc-text">10进制转8421BCD互转</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-text">逻辑代数基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%88%96%E4%B8%8E%E5%90%8C%E6%88%96%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E4%B8%8E%E6%88%96%E9%9D%9E"><span class="toc-text">异或与同或及其常见与或非</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%AC%E5%BC%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E5%85%AC%E5%BC%8F"><span class="toc-text">基本公式与常用公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E5%AE%9A%E7%90%86%E4%B8%8E%E5%AF%B9%E5%81%B6%E5%AE%9A%E7%90%86"><span class="toc-text">反演定理与对偶定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E8%AF%BA%E5%9B%BE"><span class="toc-text">卡诺图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E9%A1%B9%E5%8F%8A%E5%85%B6%E6%97%A0%E5%85%B3%E9%A1%B9"><span class="toc-text">最小项及其无关项</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%96%E7%AE%80"><span class="toc-text">化简</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E5%8C%96"><span class="toc-text">转化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E7%94%B5%E8%B7%AF"><span class="toc-text">半导体电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SR%E9%94%81%E5%AD%98%E5%99%A8"><span class="toc-text">SR锁存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E5%B9%B3%E8%A7%A6%E5%8F%91%E7%9A%84SR%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">电平触发的SR触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E5%B9%B3%E8%A7%A6%E5%8F%91%E7%9A%84D%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">电平触发的D触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E7%9A%84D%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">边沿触发的D触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E8%A7%A6%E5%8F%91%E7%9A%84SR%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">脉冲触发的SR触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E8%A7%A6%E5%8F%91%E7%9A%84JK%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">脉冲触发的JK触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E7%9A%84T%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-text">边沿触发的T触发器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">触发器的分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%8B%BC%E8%A3%85"><span class="toc-text">存储器的拼装</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2024-03-08T03:10:12.000Z">2024-03-08</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2024-03-13T16:36:14.757Z">2024-03-14</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>数电重置版</span></h1>
+<p>我希望在3月20号之前学完数电，开始挑战！</p>
+<h2 id="整体逻辑框架图"><a href="#整体逻辑框架图" class="headerlink" title="整体逻辑框架图"></a>整体逻辑框架图</h2><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFs8uLR"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/08/pFs8uLR.jpg"/></div></div></a></p>
+<h2 id="数制与码制"><a href="#数制与码制" class="headerlink" title="数制与码制"></a>数制与码制</h2><h3 id="10进制转2进制"><a href="#10进制转2进制" class="headerlink" title="10进制转2进制"></a>10进制转2进制</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pF6sWYF"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/11/pF6sWYF.png"/></div></div></a></p>
+<h3 id="2进制转10进制"><a href="#2进制转10进制" class="headerlink" title="2进制转10进制"></a>2进制转10进制</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pF6sRFU"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/11/pF6sRFU.png"/></div></div></a></p>
+<h3 id="10进制转8421BCD互转"><a href="#10进制转8421BCD互转" class="headerlink" title="10进制转8421BCD互转"></a>10进制转8421BCD互转</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pF6yktS"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/12/pF6yktS.png"/></div></div></a></p>
+<hr>
+<hr>
+<hr>
+<h2 id="逻辑代数基础"><a href="#逻辑代数基础" class="headerlink" title="逻辑代数基础"></a>逻辑代数基础</h2><h3 id="异或与同或及其常见与或非"><a href="#异或与同或及其常见与或非" class="headerlink" title="异或与同或及其常见与或非"></a>异或与同或及其常见与或非</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFcQ1X9"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/13/pFcQ1X9.png"/></div></div></a></p>
+<h3 id="基本公式与常用公式"><a href="#基本公式与常用公式" class="headerlink" title="基本公式与常用公式"></a>基本公式与常用公式</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc81C6"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/13/pFc81C6.jpg"/></div></div></a></p>
+<h3 id="反演定理与对偶定理"><a href="#反演定理与对偶定理" class="headerlink" title="反演定理与对偶定理"></a>反演定理与对偶定理</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFcTWj0"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/13/pFcTWj0.jpg"/></div></div></a></p>
+<h3 id="卡诺图"><a href="#卡诺图" class="headerlink" title="卡诺图"></a>卡诺图</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc7nUg"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/14/pFc7nUg.jpg"/></div></div></a></p>
+<h3 id="最小项及其无关项"><a href="#最小项及其无关项" class="headerlink" title="最小项及其无关项"></a>最小项及其无关项</h3><p>无关项（d表示，卡诺图中用X）</p>
+<ul>
+<li>任意项</li>
+<li>约束项</li>
+</ul>
+<p>目的：矩形圈最大，矩形数量最少</p>
+<h3 id="化简"><a href="#化简" class="headerlink" title="化简"></a>化简</h3><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc7u5Q"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/14/pFc7u5Q.png"/></div></div></a></p>
+<h4 id="转化"><a href="#转化" class="headerlink" title="转化"></a>转化</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc7Q8s"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/14/pFc7Q8s.png"/></div></div></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc7U54"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/14/pFc7U54.png"/></div></div></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc7wG9"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/14/pFc7wG9.png"/></div></div></a><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFc702R"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/14/pFc702R.png"/></div></div></a></p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://www.freeimg.cn/i/2024/03/14/65f1d5e0ad608.png"/></div></div>
+<h2 id="半导体电路"><a href="#半导体电路" class="headerlink" title="半导体电路"></a>半导体电路</h2><p>分类<br>存储大小</p>
+<ul>
+<li>存储单元（一个字节）<ul>
+<li>静态存储单元</li>
+<li>动态存储单元（需要定时刷新，主要用电容）</li>
+</ul>
+</li>
+<li>寄存器（一组字节）</li>
+<li>存储器（大量字节）</li>
+</ul>
+<hr>
+<h3 id="SR锁存器"><a href="#SR锁存器" class="headerlink" title="SR锁存器"></a>SR锁存器</h3><ul>
+<li>与非门SR锁存器</li>
+<li>或非门SR锁存器</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFyBZnK"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/10/pFyBZnK.jpg"/></div></div></a></p>
+<h3 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h3><h4 id="电平触发的SR触发器"><a href="#电平触发的SR触发器" class="headerlink" title="电平触发的SR触发器"></a>电平触发的SR触发器</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFyvg4U"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/10/pFyvg4U.jpg"/></div></div></a></p>
+<h4 id="电平触发的D触发器"><a href="#电平触发的D触发器" class="headerlink" title="电平触发的D触发器"></a>电平触发的D触发器</h4><p>为了适应单端输入信号需求，常用D输入代替S,R输入<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFyvb4O"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/10/pFyvb4O.jpg"/></div></div></a><br><strong>利用CMOS传输门组成电平触发的D触发器</strong><br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFyvfgJ"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/10/pFyvfgJ.png"/></div></div></a><br>在clk有效期间，输出与输入相同，该触发器又被称为透明D触发器</p>
+<h4 id="边沿触发的D触发器"><a href="#边沿触发的D触发器" class="headerlink" title="边沿触发的D触发器"></a>边沿触发的D触发器</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFyvzDI"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/10/pFyvzDI.png"/></div></div></a><br>该电路上升沿有效<br>Q*&#x3D;D</p>
+<h4 id="脉冲触发的SR触发器"><a href="#脉冲触发的SR触发器" class="headerlink" title="脉冲触发的SR触发器"></a>脉冲触发的SR触发器</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pF60iuV"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/11/pF60iuV.jpg"/></div></div></a></p>
+<h4 id="脉冲触发的JK触发器"><a href="#脉冲触发的JK触发器" class="headerlink" title="脉冲触发的JK触发器"></a>脉冲触发的JK触发器</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pF60ug1"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/11/pF60ug1.jpg"/></div></div></a></p>
+<h4 id="边沿触发的T触发器"><a href="#边沿触发的T触发器" class="headerlink" title="边沿触发的T触发器"></a>边沿触发的T触发器</h4><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pF6DmOx"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/11/pF6DmOx.jpg"/></div></div></a></p>
+<h4 id="触发器的分类"><a href="#触发器的分类" class="headerlink" title="触发器的分类"></a>触发器的分类</h4><p>触发方式分类</p>
+<ul>
+<li>无触发</li>
+<li>电平触发</li>
+<li>边缘触发</li>
+<li>脉冲触发</li>
+</ul>
+<p>触发器分类</p>
+<ul>
+<li>SR触发器</li>
+<li>D触发器</li>
+<li>JK触发器</li>
+<li>T触发器<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pF6DMTO"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/11/pF6DMTO.jpg"/></div></div></a></li>
+</ul>
+<p>触发方式与逻辑功能无逻辑关系</p>
+<h3 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h3><p>随机存储器RAM(断电丢失)</p>
+<ul>
+<li>静态存储器（SRAM,速度快，集成度低，成本高）</li>
+<li>动态存储器（DRAM，速度慢，集成度高，成本低）<br>只读存储器ROM(断电不丢失)</li>
+<li>掩膜ROM</li>
+<li>可编程ROM</li>
+<li>可擦除可编程ROM</li>
+</ul>
+<h3 id="存储器的拼装"><a href="#存储器的拼装" class="headerlink" title="存储器的拼装"></a>存储器的拼装</h3>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2024/03/12/python%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98/">python算法实战</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/02/15/%E9%99%80%E8%9E%BA%E4%BB%AA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/">陀螺仪的工作原理</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
