@@ -23,18 +23,22 @@
   <title>python算法实战 - 无 忧</title>
 
   
-    <meta name="description" content="去年报名了蓝桥杯，却一直没有联系练习，也该开始了，为了300的报名费">
+    <meta name="description" content="去年报名了蓝桥杯，却一直没有练习，也该开始了，为了300的报名费 时间复杂度O(1),O(n),O($n^{2}$),O($log_{2}n$),O(n!)… 空间复杂度 递归 调用条件 结束自身  实例 12345678910def jiecheng(n):    if n !&#x3D; 1:        sum &#x3D; n * jiecheng(n - 1)        return sum    e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python算法实战">
 <meta property="og:url" content="http://example.com/2024/03/12/python%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="去年报名了蓝桥杯，却一直没有联系练习，也该开始了，为了300的报名费">
+<meta property="og:description" content="去年报名了蓝桥杯，却一直没有练习，也该开始了，为了300的报名费 时间复杂度O(1),O(n),O($n^{2}$),O($log_{2}n$),O(n!)… 空间复杂度 递归 调用条件 结束自身  实例 12345678910def jiecheng(n):    if n !&#x3D; 1:        sum &#x3D; n * jiecheng(n - 1)        return sum    e">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/15/pFgIYTg.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/15/pFgI0lq.png">
+<meta property="og:image" content="https://s21.ax1x.com/2024/03/16/pF2ipDO.jpg">
 <meta property="article:published_time" content="2024-03-11T17:16:53.000Z">
-<meta property="article:modified_time" content="2024-03-11T17:18:46.356Z">
+<meta property="article:modified_time" content="2024-03-15T17:12:59.672Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="python">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s21.ax1x.com/2024/03/15/pFgIYTg.png">
   
   
   
@@ -81,9 +85,7 @@
 
 <div class="widgets">
 
-
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/03/08/%E6%95%B0%E7%94%B5%E9%87%8D%E7%BD%AE%E7%89%88/"><span class="title">数电重置版</span></a><a class="item title" href="/2024/03/12/ROS%E8%BD%A6%E8%AE%B0%E5%BD%95/"><span class="title">ROS车记录</span></a><a class="item title" href="/2024/03/12/python%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98/"><span class="title">python算法实战</span></a><a class="item title" href="/2024/01/27/12V%E8%BD%AC5V%E7%94%B5%E6%BA%90%E6%A8%A1%E5%9D%97/"><span class="title">12V转5V电源模块</span></a><a class="item title" href="/2024/02/15/%E9%99%80%E8%9E%BA%E4%BB%AA%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"><span class="title">陀螺仪的工作原理</span></a></div></widget>
-
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">python算法实战</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-text">递归</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE"><span class="toc-text">查找</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%9F%A5%E6%89%BE"><span class="toc-text">顺序查找</span></a></li></ol></li></ol></div></div></widget>
 
 
 
@@ -104,13 +106,29 @@
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
     <span>Posted on&nbsp;<time datetime="2024-03-11T17:16:53.000Z">2024-03-12</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2024-03-11T17:18:46.356Z">2024-03-12</time></span>
+    <span>Updated on&nbsp;<time datetime="2024-03-15T17:12:59.672Z">2024-03-16</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>python算法实战</span></h1>
-<p>去年报名了蓝桥杯，却一直没有联系练习，也该开始了，为了300的报名费</p>
+<p>去年报名了蓝桥杯，却一直没有练习，也该开始了，为了300的报名费</p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>O(1),O(n),O($n^{2}$),O($log_{2}n$),O(n!)…<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFgIYTg"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/15/pFgIYTg.png"/></div></div></a></p>
+<h2 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h2><p><a target="_blank" rel="noopener" href="https://imgse.com/i/pFgI0lq"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/15/pFgI0lq.png"/></div></div></a></p>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
+<li>调用条件</li>
+<li>结束自身<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pF2ipDO"><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://s21.ax1x.com/2024/03/16/pF2ipDO.jpg"/></div></div></a></li>
+</ul>
+<p>实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">jiecheng</span>(<span class="params">n</span>):</span><br><span class="line">    <span class="keyword">if</span> n != <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">sum</span> = n * jiecheng(n - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(jiecheng(<span class="number">5</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#结果</span></span><br><span class="line"><span class="number">120</span></span><br></pre></td></tr></table></figure>
 
+
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><ul>
+<li>顺序查找</li>
+<li>二分查找</li>
+</ul>
+<h3 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">shuxu</span>(<span class="params">list_1, val</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(list_1)):</span><br><span class="line">        <span class="keyword">if</span> val == list_1[i]:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">list_my = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">5</span>))</span><br><span class="line"><span class="built_in">print</span>(shuxu(list_my, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#结果</span></span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
 
 
 <div class="article-footer reveal fs14">
