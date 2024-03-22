@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>讯飞车找板子返回坐标点程序 - 无 忧</title>
+
+  
+    <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="讯飞车找板子返回坐标点程序">
+<meta property="og:url" content="http://example.com/2024/03/22/%E8%AE%AF%E9%A3%9E%E8%BD%A6%E6%89%BE%E6%9D%BF%E5%AD%90%E8%BF%94%E5%9B%9E%E5%9D%90%E6%A0%87%E7%82%B9%E7%A8%8B%E5%BA%8F/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-22T05:44:51.000Z">
+<meta property="article:modified_time" content="2024-03-22T05:46:32.548Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://z1.ax1x.com/2023/12/13/pifGaLR.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://z1.ax1x.com/2023/12/13/pifGaLR.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/03/22/%E8%AE%AF%E9%A3%9E%E8%BD%A6%E6%89%BE%E6%9D%BF%E5%AD%90%E8%BF%94%E5%9B%9E%E5%9D%90%E6%A0%87%E7%82%B9%E7%A8%8B%E5%BA%8F/"><span class="title">讯飞车找板子返回坐标点程序</span></a><a class="item title" href="/2024/03/22/%E5%9F%BA%E4%BA%8Estc32%E7%9A%84%E4%BF%A1%E5%8F%B7%E5%8F%91%E7%94%9F%E5%99%A8%E7%9A%84%E5%88%B6%E4%BD%9C/"><span class="title">基于stc32的信号发生器的制作</span></a><a class="item title" href="/2024/03/08/%E6%95%B0%E7%94%B5%E9%87%8D%E7%BD%AE%E7%89%88/"><span class="title">数电重置版</span></a><a class="item title" href="/2024/03/12/python%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98/"><span class="title">python算法实战</span></a><a class="item title" href="/2024/03/12/ROS%E8%BD%A6%E8%AE%B0%E5%BD%95/"><span class="title">ROS车记录</span></a></div></widget>
+
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2024-03-22T05:44:51.000Z">2024-03-22</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2024-03-22T05:46:32.548Z">2024-03-22</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>讯飞车找板子返回坐标点程序</span></h1>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rotate_vector</span>(<span class="params">vector, angle</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    将向量旋转一定的角度</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 将角度转换为弧度</span></span><br><span class="line">    angle_rad = np.deg2rad(angle)</span><br><span class="line">    <span class="comment"># 构造旋转矩阵</span></span><br><span class="line">    rotation_matrix = np.array([[np.cos(angle_rad), -np.sin(angle_rad)],</span><br><span class="line">                                [np.sin(angle_rad), np.cos(angle_rad)]])</span><br><span class="line">    <span class="comment"># 使用旋转矩阵对向量进行旋转</span></span><br><span class="line">    rotated_vector = np.dot(rotation_matrix, vector)</span><br><span class="line">    <span class="comment"># 保留三位有效数字</span></span><br><span class="line">    rotated_vector = np.around(rotated_vector, decimals=<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span> rotated_vector</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">radians_to_vector</span>(<span class="params">theta</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    将theta转化为向量</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 计算向量的 x 和 y 分量</span></span><br><span class="line">    x = np.cos(theta)*<span class="number">1</span></span><br><span class="line">    y = np.sin(theta)*<span class="number">1</span></span><br><span class="line">    <span class="comment"># 保留三位小数</span></span><br><span class="line">    x = np.around(x, decimals=<span class="number">3</span>)</span><br><span class="line">    y = np.around(y, decimals=<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span> np.array([x, y])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_angle_less_than_X</span>(<span class="params">x, v1, v2</span>):</span><br><span class="line">    <span class="comment"># 计算向量的点积</span></span><br><span class="line">    dot_product = np.dot(v1, v2)</span><br><span class="line">    <span class="comment"># 计算向量的模长</span></span><br><span class="line">    v1_norm = np.linalg.norm(v1)</span><br><span class="line">    v2_norm = np.linalg.norm(v2)</span><br><span class="line">    <span class="comment"># 计算夹角的余弦值</span></span><br><span class="line">    cos_angle = dot_product / (v1_norm * v2_norm)</span><br><span class="line">    <span class="comment"># 计算 X 度的余弦值</span></span><br><span class="line">    cos_x_deg = np.cos(np.deg2rad(x))</span><br><span class="line">    <span class="keyword">return</span> cos_angle &gt; cos_x_deg</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_angle_greater_than_90</span>(<span class="params">v1, v2</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    判断两向量夹角是否大于90度，大于返回True</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 计算向量的点积</span></span><br><span class="line">    dot_product = np.dot(v1, v2)</span><br><span class="line">    <span class="comment"># 如果点积小于 0，则夹角大于 90 度</span></span><br><span class="line">    <span class="keyword">return</span> dot_product &lt; <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BoardTrue</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    用于判断并筛选出有效的板子</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, my_list, car_x, car_y, car_theta, cv_po</span>):</span><br><span class="line">        self.my_list = my_list</span><br><span class="line">        self.car_x = np.around(car_x, decimals=<span class="number">3</span>)</span><br><span class="line">        self.car_y = np.around(car_y, decimals=<span class="number">3</span>)</span><br><span class="line">        self.car_theta = np.around(car_theta, decimals=<span class="number">3</span>)</span><br><span class="line">        self.cv_po = np.around(cv_po, decimals=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">chose_board</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(self.my_list) == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            n = <span class="built_in">len</span>(self.my_list)</span><br><span class="line">            <span class="built_in">print</span>(n)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0.2</span> &lt; self.my_list[i][<span class="number">2</span>] &lt; <span class="number">0.7</span>:</span><br><span class="line">                    x = self.my_list[i][<span class="number">0</span>] - self.car_x</span><br><span class="line">                    y = self.my_list[i][<span class="number">1</span>] - self.car_y</span><br><span class="line">                    v1 = np.array([x, y])</span><br><span class="line">                    v2 = radians_to_vector(self.car_theta)</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">&quot;i为&quot;</span> + <span class="built_in">str</span>(i))</span><br><span class="line">                    <span class="built_in">print</span>(is_angle_less_than_X(<span class="number">70</span>, v1, v2))</span><br><span class="line">                    <span class="keyword">if</span> is_angle_less_than_X(<span class="number">70</span>, v1, v2):</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">&quot;dfg&quot;</span>)</span><br><span class="line">                        mapped_value = (self.cv_po - (<span class="number">0</span>)) * (<span class="number">70</span> - (-<span class="number">10</span>)) / (<span class="number">640</span> - <span class="number">0</span>) + (-<span class="number">70</span>)</span><br><span class="line">                        v3 = rotate_vector(v2, mapped_value)</span><br><span class="line">                        <span class="keyword">if</span> is_angle_less_than_X(<span class="number">25</span>, v1, v3):</span><br><span class="line">                            <span class="built_in">print</span>(<span class="string">&quot;asd&quot;</span>)</span><br><span class="line">                            <span class="keyword">return</span> self.my_list[i]</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BoardWithCv</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    使用此类时，请确保传入的板子是一个且有效,他会返回一个导航点x,y,theta</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, car_x, car_y, car_theta, board_x, board_y, board_theta</span>):</span><br><span class="line">        <span class="comment"># 实例属性</span></span><br><span class="line">        self.car_x = np.around(car_x, decimals=<span class="number">3</span>)</span><br><span class="line">        self.car_y = np.around(car_y, decimals=<span class="number">3</span>)</span><br><span class="line">        self.car_theta = np.around(car_theta, decimals=<span class="number">3</span>)</span><br><span class="line">        self.board_x = np.around(board_x, decimals=<span class="number">3</span>)</span><br><span class="line">        self.board_y = np.around(board_y, decimals=<span class="number">3</span>)</span><br><span class="line">        self.board_theta = np.around(board_theta, decimals=<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_board_theta_ture</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        判断并执行板子的角度是否需要反转,并返回导航点,弧度，是否有效</span></span><br><span class="line"><span class="string">        :return:</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        v1 = np.array([self.board_x - self.car_x, self.board_y - self.car_y])</span><br><span class="line">        v2 = radians_to_vector(self.board_theta)</span><br><span class="line">        <span class="keyword">if</span> is_angle_greater_than_90(v1, v2):</span><br><span class="line">            self.board_theta = self.board_theta + <span class="number">3.141</span></span><br><span class="line">            v2 = radians_to_vector(self.board_theta)</span><br><span class="line">        goal_x = np.around(self.board_x - <span class="number">0.3</span> * v2[<span class="number">0</span>], decimals=<span class="number">3</span>)</span><br><span class="line">        goal_y = np.around(self.board_y - <span class="number">0.3</span> * v2[<span class="number">1</span>], decimals=<span class="number">3</span>)</span><br><span class="line">        <span class="keyword">return</span> goal_x, goal_y, self.board_theta</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="comment">## 测试代码</span></span><br><span class="line">    <span class="comment"># board=[-1,1,0.785]</span></span><br><span class="line">    board = [-<span class="number">1.6258577108383179</span>, <span class="number">1.445590853691101</span>, <span class="number">0.456392377614975</span>, <span class="number">0.011698315851390362</span>, <span class="number">1.518639469495104</span>]</span><br><span class="line">    <span class="comment"># board=[-3,1,3.14-0.785]</span></span><br><span class="line">    pos = BoardWithCv(-<span class="number">2</span>, <span class="number">0</span>, <span class="number">1.57</span>, board[<span class="number">0</span>], board[<span class="number">1</span>], board[<span class="number">4</span>])</span><br><span class="line">    <span class="built_in">print</span>(pos.is_board_theta_ture())</span><br><span class="line">    my_list = [[-<span class="number">1</span>, <span class="number">1</span>,<span class="number">0.5</span>,<span class="number">0.02</span>, <span class="number">0.785</span>], [-<span class="number">3</span>, <span class="number">1</span>,<span class="number">0.5</span>,<span class="number">0.02</span>,<span class="number">3.14</span>-<span class="number">0.785</span>], [-<span class="number">2</span>, <span class="number">1</span>,<span class="number">0.5</span>,<span class="number">0.02</span>,<span class="number">1.3</span>]]</span><br><span class="line">    my_list2 =[]</span><br><span class="line">    my_list3 = [[-<span class="number">1.1039749383926392</span>, -<span class="number">1.6410338878631592</span>, <span class="number">0.459942102432251</span>, <span class="number">0.006066703703254461</span>, <span class="number">2.404021134944642</span>], [-<span class="number">1.0234383344650269</span>, <span class="number">1.4331644773483276</span>, <span class="number">0.6236299276351929</span>, <span class="number">0.0975717082619667</span>, <span class="number">0.6774194980518585</span>], [-<span class="number">1.6258577108383179</span>, <span class="number">1.445590853691101</span>, <span class="number">0.456392377614975</span>, <span class="number">0.011698315851390362</span>, <span class="number">1.518639469495104</span>], [-<span class="number">2.016007423400879</span>, <span class="number">1.6973320245742798</span>, <span class="number">0.17067547142505646</span>, <span class="number">0.008529485203325748</span>, <span class="number">1.4121627729088593</span>], [-<span class="number">2.3203864097595215</span>, <span class="number">1.3803951740264893</span>, <span class="number">0.4648244082927704</span>, <span class="number">0.011016763746738434</span>, <span class="number">2.12274152271989</span>]]</span><br><span class="line">    my_list4 = [[-<span class="number">2.2005648612976074</span>, -<span class="number">1.9698346853256226</span>, <span class="number">0.26301005482673645</span>, <span class="number">0.02629818394780159</span>, <span class="number">1.2184761268334674</span>], [-<span class="number">1.6092170476913452</span>, -<span class="number">1.8576725721359253</span>, <span class="number">0.3533917963504791</span>, <span class="number">0.029181374236941338</span>, <span class="number">1.9172304414045462</span>], [-<span class="number">1.0438616275787354</span>, -<span class="number">1.4628329277038574</span>, <span class="number">0.47950631380081177</span>, <span class="number">0.013515759259462357</span>, <span class="number">2.4409537863628334</span>], [-<span class="number">1.6358827352523804</span>, <span class="number">1.4406025409698486</span>, <span class="number">1.5764230489730835</span>, <span class="number">0.26953673362731934</span>, <span class="number">1.4236640668400438</span>]]</span><br><span class="line">    my_list5 = [[-<span class="number">2.2020256519317627</span>, -<span class="number">1.9928362369537354</span>, <span class="number">0.2039794772863388</span>, <span class="number">0.025548739358782768</span>, <span class="number">1.1120026801359906</span>], [-<span class="number">1.6541303396224976</span>, -<span class="number">1.898160457611084</span>, <span class="number">0.3227234482765198</span>, <span class="number">0.01702151633799076</span>, <span class="number">1.7969596897315867</span>], [-<span class="number">1.4612840414047241</span>, -<span class="number">1.1711866855621338</span>, <span class="number">0.4812791049480438</span>, <span class="number">0.05817915499210358</span>, <span class="number">2.159874044377892</span>], [-<span class="number">1.0457868576049805</span>, <span class="number">1.2947330474853516</span>, <span class="number">0.44938141107559204</span>, <span class="number">0.009451523423194885</span>, <span class="number">0.8893285575700086</span>], [-<span class="number">2.283306121826172</span>, <span class="number">1.518304705619812</span>, <span class="number">0.4721873700618744</span>, <span class="number">0.007294466253370047</span>, <span class="number">2.0108069978910965</span>]]</span><br><span class="line"></span><br><span class="line">    posa = BoardTrue(my_list5, -<span class="number">2</span>, <span class="number">0</span>, <span class="number">0.8</span>, <span class="number">331</span>)</span><br><span class="line">    <span class="built_in">print</span>(posa.chose_board())</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">[00:15:08.34] 前往pose_3</span></span><br><span class="line"><span class="string">&#123;u&#x27;spontoon&#x27;: 284.0&#125;</span></span><br><span class="line"><span class="string">targetspontoon</span></span><br><span class="line"><span class="string">first_1&#123;u&#x27;spontoon&#x27;: 284.0&#125;</span></span><br><span class="line"><span class="string">boards[[-2.20574951171875, -1.9964897632598877, 0.19374234974384308, 0.0202349741011858, 1.0713866771931375], [-1.6379033327102661, -1.9009284973144531, 0.34384506940841675, 0.010412354953587055, 1.8343551319682068], [-1.4544870853424072, -1.176705002784729, 0.4698032736778259, 0.053842246532440186, 2.147697938715995], [-1.02494215965271, 1.2817209959030151, 0.468691885471344, 0.005473896395415068, 0.8983430915438178], [-2.271810293197632, 1.5118887424468994, 0.46807199716567993, 0.00690682977437973, 2.0043066211443765]]</span></span><br><span class="line"><span class="string">[-1.02494215965271, 1.2817209959030151, 0.468691885471344, 0.005473896395415068, 0.8983430915438178]</span></span><br><span class="line"><span class="string">quat=[0, 0, 0.434, 0.901]</span></span><br><span class="line"><span class="string">send the goal</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/03/22/%E5%9F%BA%E4%BA%8Estc32%E7%9A%84%E4%BF%A1%E5%8F%B7%E5%8F%91%E7%94%9F%E5%99%A8%E7%9A%84%E5%88%B6%E4%BD%9C/">基于stc32的信号发生器的制作</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
