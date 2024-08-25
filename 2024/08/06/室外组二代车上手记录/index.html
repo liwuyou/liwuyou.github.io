@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>室外组二代车上手记录 - 无 忧</title>
+
+  
+    <meta name="description" content="碎碎念8月5号拿到室外组二代新车，人有点麻，一方面比赛日期临近，而且二队还没有车。新车上手后，发现问题很多，首先是密码登不上去，车的所有USB端口都被占满，而且昇腾310的板没有内置wifi,300块的树莓派都有wifi,他没有，而且系统是Ubuntu22(魔改版，单内核)的，只有这个版本的镜像，这导致无法在原生环境跑ros1,赛事方给出的解决方法是在root用户在跑linux容器，容器为ubun">
+<meta property="og:type" content="article">
+<meta property="og:title" content="室外组二代车上手记录">
+<meta property="og:url" content="http://example.com/2024/08/06/%E5%AE%A4%E5%A4%96%E7%BB%84%E4%BA%8C%E4%BB%A3%E8%BD%A6%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="碎碎念8月5号拿到室外组二代新车，人有点麻，一方面比赛日期临近，而且二队还没有车。新车上手后，发现问题很多，首先是密码登不上去，车的所有USB端口都被占满，而且昇腾310的板没有内置wifi,300块的树莓派都有wifi,他没有，而且系统是Ubuntu22(魔改版，单内核)的，只有这个版本的镜像，这导致无法在原生环境跑ros1,赛事方给出的解决方法是在root用户在跑linux容器，容器为ubun">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20240807013432.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20240808155648.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251652813.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653318.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653778.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653022.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653674.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251654818.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653739.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653249.png">
+<meta property="article:published_time" content="2024-08-06T08:06:00.000Z">
+<meta property="article:modified_time" content="2024-08-25T08:55:57.390Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="竞赛">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20240807013432.png">
+  
+  
+  
+  <meta name="keywords" content="竞赛">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">室外组二代车上手记录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%8E%E7%A2%8E%E5%BF%B5"><span class="toc-text">碎碎念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4%E5%8F%8A%E6%93%8D%E4%BD%9C"><span class="toc-text">vim常见命令及操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"><span class="toc-text">基础操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-text">配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">进阶操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zip%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C"><span class="toc-text">zip常见操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#linux%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%E8%A1%8C"><span class="toc-text">linux系统操作命令行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E5%8A%9F%E8%83%BD%E5%8C%85%E5%AE%89%E8%A3%85%E5%8F%8A%E4%B8%8B%E8%BD%BD%E7%9B%B8%E5%85%B3"><span class="toc-text">与功能包安装及下载相关</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ros%E8%BD%A6%E8%AE%BE%E7%BD%AE"><span class="toc-text">ros车设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E8%BD%A6%E5%AE%9E%E5%BD%95"><span class="toc-text">新车实录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A4%E5%A4%96%E7%BB%84%E4%B8%8A%E6%89%8B"><span class="toc-text">室外组上手</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-text">前期准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%BA%E5%9B%BE"><span class="toc-text">建图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E7%82%B9"><span class="toc-text">打点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%80%E8%B7%91"><span class="toc-text">开跑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%AE%B2%E8%A7%A3"><span class="toc-text">代码讲解</span></a></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2024-08-06T08:06:00.000Z">2024-08-06</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2024-08-25T08:55:57.390Z">2024-08-25</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>室外组二代车上手记录</span></h1>
+<h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><p>8月5号拿到室外组二代新车，人有点麻，一方面比赛日期临近，而且二队还没有车。<br>新车上手后，发现问题很多，首先是密码登不上去，车的所有USB端口都被占满，而且昇腾310的板没有内置wifi,300块的树莓派都有wifi,他没有，而且系统是Ubuntu22(魔改版，单内核)的，只有这个版本的镜像，这导致无法在原生环境跑ros1,<br>赛事方给出的解决方法是<strong>在root用户在跑linux容器，容器为ubuntu20,在此跑ros，然后通过与用户ubuntu20的电脑使用ros的主从机和ssh连接实现远程部分可视化操作</strong><br>我的评价是，脑残，傻逼操作，垃圾昇腾上位机板卡没wifi，支持的镜像也少，官网查询板卡资料，还带锁，各种注册，还要序列号申请，垃圾板卡，狗都不用。工控机都比他强<br>碎碎念结束，不管这么说，比赛还是要继续的。</p>
+<h2 id="vim常见命令及操作"><a href="#vim常见命令及操作" class="headerlink" title="vim常见命令及操作"></a>vim常见命令及操作</h2><p>首先，关闭大写锁定，切换为英语小写模式   </p>
+<h3 id="基础操作"><a href="#基础操作" class="headerlink" title="基础操作"></a>基础操作</h3><ul>
+<li>进入文件 vim 文件名，文件不存在会创建文件</li>
+<li>按a或i进入编辑模式，此时左下方显示 –INSERT–，o新增加一行，进入编辑模式</li>
+<li>输入文本，后按Ese退出编辑模式，输入:,进入命令行模式</li>
+<li>q为不保存退出，wq为保存退出</li>
+<li>shift+i，在此行最前面加内容，shift+a，在此行最后面就内容</li>
+<li>普通模式输入gg，光标回到起头，输入shift+g，光标回到最后</li>
+</ul>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><blockquote>
+<p>小插曲，突然发现图床用不了了，检查发现系统时间用问题，更新一下就可以了，时间问题是因为双系统切换导致的，具体原因不明</p>
+</blockquote>
+<ul>
+<li><p>输入 vim –version</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20240807013432.png"/></div></div>
+</li>
+<li><p>打开其中的$HOME&#x2F;.vimrc<br>Vim $HOME&#x2F;.vimrc </p>
+</li>
+<li><p>增加set number<br>vim显示行号</p>
+</li>
+</ul>
+<h3 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h3><ul>
+<li>gg-到第一行</li>
+<li>shift + g 最后一行</li>
+<li>yy-复制当前行</li>
+<li>dd-删除当前行</li>
+<li>u-撤销前次操作</li>
+<li>.重复前次操作</li>
+<li>&#x2F; 搜索</li>
+<li>:&#x2F;%s&#x2F;原单词&#x2F;新单词&#x2F;g</li>
+</ul>
+<h2 id="zip常见操作"><a href="#zip常见操作" class="headerlink" title="zip常见操作"></a>zip常见操作</h2><blockquote>
+<p>zip的安装，打开终端输入下面两行,安装 zip 和 unzip</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install zip unzip</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>基本创建</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">zip archive_name.zip file1 file2</span><br><span class="line"># 这个命令将 file1 和 file2 压缩到一个名为 archive_name.zip 的ZIP文件中</span><br><span class="line"></span><br><span class="line">zip -r archive_name.zip directory_name</span><br><span class="line"># 使用 -r 选项可以递归地将整个目录（包括其子目录和文件）压缩到ZIP文件中。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解压ZIP文件</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">unzip archive_name.zip</span><br><span class="line"># 这个命令将 archive_name.zip 文件中的所有内容解压到当前目录。</span><br><span class="line"></span><br><span class="line">unzip archive_name.zip -d destination_directory</span><br><span class="line"># 使用 -d 选项可以将ZIP文件的内容解压到指定的目录 destination_directory 中。</span><br><span class="line"></span><br><span class="line">unzip -o archive_name.zip</span><br><span class="line"># 使用 -o 选项将覆盖现有的文件。</span><br></pre></td></tr></table></figure>
+
+<h2 id="linux系统操作命令行"><a href="#linux系统操作命令行" class="headerlink" title="linux系统操作命令行"></a>linux系统操作命令行</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"># 过于基本的就略过了</span><br><span class="line"></span><br><span class="line">mkdir directory_name</span><br><span class="line">创建目录</span><br><span class="line"></span><br><span class="line">rm -r directory_name</span><br><span class="line">删除非空目录</span><br><span class="line"></span><br><span class="line">cp source_file destination_file</span><br><span class="line">复制文件或目录</span><br><span class="line"></span><br><span class="line">mv source_file destination_file</span><br><span class="line">移动文件或目录</span><br><span class="line"></span><br><span class="line">mv old_name new_name</span><br><span class="line">重命名文件</span><br><span class="line"></span><br><span class="line">chmod -R 777 /path/to/directory</span><br><span class="line">赋予文件夹下所有文件777权限</span><br><span class="line"></span><br><span class="line">ps</span><br><span class="line">显示当前用户的进程</span><br><span class="line"></span><br><span class="line">top</span><br><span class="line">实时显示系统进程</span><br><span class="line"></span><br><span class="line">uname -a</span><br><span class="line">显示系统信息</span><br><span class="line"></span><br><span class="line">free -h</span><br><span class="line">显示内存使用情况</span><br><span class="line"></span><br><span class="line">du -sh [目录]</span><br><span class="line">显示指定目录的磁盘使用情况</span><br></pre></td></tr></table></figure>
+
+<h3 id="与功能包安装及下载相关"><a href="#与功能包安装及下载相关" class="headerlink" title="与功能包安装及下载相关"></a>与功能包安装及下载相关</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">首先检查网路，并且检查时间的准确性</span><br><span class="line">ping baidu.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line">更新包列表</span><br><span class="line"></span><br><span class="line">sudo apt-get install [包名]</span><br><span class="line">安装软件包</span><br><span class="line"></span><br><span class="line">sudo apt-get remove [包名]</span><br><span class="line">卸载软件包</span><br><span class="line"></span><br><span class="line">sudo apt update</span><br><span class="line">更新源</span><br><span class="line"></span><br><span class="line">sudo apt install ros-版本-库名</span><br><span class="line">ros相关包安装，版本有noetic,等</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="ros车设置"><a href="#ros车设置" class="headerlink" title="ros车设置"></a>ros车设置</h2><h3 id="新车实录"><a href="#新车实录" class="headerlink" title="新车实录"></a>新车实录</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20240808155648.png"/></div></div>
+<blockquote>
+<p>警告1，所有的端口定义与官方给的教程并不相同，而且雷达端口在车辆启动后拔插会导致该端口丢失。所以开机后不要尝试拔插雷达口，所有USB接口已用小标签标注</p>
+</blockquote>
+<blockquote>
+<p>警告2,由于升腾的板卡没有WiFi模块，所以通过拓展坞插上网口，连接有网的路由器后，还需要拔掉车载路由器与板卡的网线，否则没有网</p>
+</blockquote>
+<blockquote>
+<p>警告3,小车的ROS相关进程需要在固定IP下才能运行，该固定IP是由车载路由器固定，也就是说在通过网卡联网时，ROS相关程序会报错，找不到IP之类的，秉持有用就不折腾的原则，ROS关于IP的配置文件就不更改了，后来者自行调整。</p>
+</blockquote>
+<h2 id="室外组上手"><a href="#室外组上手" class="headerlink" title="室外组上手"></a>室外组上手</h2><blockquote>
+<p>镜像</p>
+</blockquote>
+<h3 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h3><p>打开车和电脑从机，电脑链接下车wifi</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251652813.png"/></div></div>
+<p>终端链接，密码Mind@123<br>打开VScode，远程链接小车主机</p>
+<h3 id="建图"><a href="#建图" class="headerlink" title="建图"></a>建图</h3><p>将车放在出发区，位置要记住</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653318.png"/></div></div>
+<p>在终端出运行</p>
+<blockquote>
+<p>python3 &#x2F;racecar&#x2F;src&#x2F;auto_car&#x2F;scripts&#x2F;map_wj.py</p>
+</blockquote>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653778.png"/></div></div>
+<p>运行前打开底盘，运行后，底盘控制小车建图，建完图后，在键盘控制的终端里按g保存地图</p>
+<h3 id="打点"><a href="#打点" class="headerlink" title="打点"></a>打点</h3><p>建完图后，vscode重开一个终端</p>
+<blockquote>
+<p>python3 &#x2F;racecar&#x2F;src&#x2F;auto_car&#x2F;scripts&#x2F;run_way_point_click.py</p>
+</blockquote>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653022.png"/></div></div>
+
+<p>运行后输入1或2回车，打开从机的rviz，挂载rviz.rviz</p>
+<blockquote>
+<p>如何挂载rviz,点击file，点击rencent config,选择rviz.rviz,如果你是第一次打开，点击open config 在rviz（已经放在代码文件下）文件夹中找到rviz.rviz</p>
+</blockquote>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653674.png"/></div></div>
+<p>点击2D Nav Goal开始打点，打完点后，再次点击2D Nav Goal，使点位与最后一个重合，终端窗口显示，保存成功。</p>
+<p>如果选择的是1，可以点击PUBlish Point ，点击空白处，显示之前打的点位，点击publish Point,点击要更改的点，点击</p>
+<p>红绿灯与斑马线停车点位修改<br>修改<br>start_light_post ，white_go，while_back</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251654818.png"/></div></div>
+
+<h3 id="开跑"><a href="#开跑" class="headerlink" title="开跑"></a>开跑</h3><p>将车放在起始点，运行</p>
+<blockquote>
+<p>python3 &#x2F;racecar&#x2F;src&#x2F;auto_car&#x2F;scripts&#x2F;wj_run.py<br>打开rviz，配置文件选择acml_rviz.rviz<br>在python3 &#x2F;racecar&#x2F;src&#x2F;auto_car&#x2F;scripts&#x2F;wj_run.py代码下的终端回车，车辆开跑。</p>
+</blockquote>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653739.png"/></div></div>
+
+<p>速度更改vp_min</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202408251653249.png"/></div></div>
+
+<p>跑的不好的话，更改点位，再次跑</p>
+<h2 id="代码讲解"><a href="#代码讲解" class="headerlink" title="代码讲解"></a>代码讲解</h2>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/08/05/%E6%89%B9%E9%87%8F%E6%96%87%E4%BB%B6%E9%87%8D%E5%91%BD%E5%90%8D%E8%84%9A%E6%9C%AC/">批量文件重命名脚本</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
