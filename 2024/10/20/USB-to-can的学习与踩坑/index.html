@@ -23,21 +23,27 @@
   <title>USB to can的学习与踩坑 - 无 忧</title>
 
   
-    <meta name="description" content="无忧的博客">
+    <meta name="description" content="前言一切的开始从一个项目说起，3D打印机的项目需要用到工具板，采用CAN通讯，由于不理解，决定学习一下CAN通讯，并由U_TO_C模块做起。 开源项目的学习 https:&#x2F;&#x2F;oshwhub.com&#x2F;hvan&#x2F;usb_can项目地址  打板后，存在问题，该种型号的排阻在淘宝上难以买到，0402封装比较难焊接。原理图部分还是比较简单   不知道是什么原因，完全焊接上后无法使用，需要去掉，注意事项写在下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="USB to can的学习与踩坑">
 <meta property="og:url" content="http://example.com/2024/10/20/USB-to-can%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="无忧的博客">
+<meta property="og:description" content="前言一切的开始从一个项目说起，3D打印机的项目需要用到工具板，采用CAN通讯，由于不理解，决定学习一下CAN通讯，并由U_TO_C模块做起。 开源项目的学习 https:&#x2F;&#x2F;oshwhub.com&#x2F;hvan&#x2F;usb_can项目地址  打板后，存在问题，该种型号的排阻在淘宝上难以买到，0402封装比较难焊接。原理图部分还是比较简单   不知道是什么原因，完全焊接上后无法使用，需要去掉，注意事项写在下">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026201405.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026202024.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/ffa9bc153247bd691a8395790f7c80f.jpg">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026205930.png">
 <meta property="article:published_time" content="2024-10-20T08:09:29.000Z">
-<meta property="article:modified_time" content="2024-10-20T08:09:29.455Z">
+<meta property="article:modified_time" content="2024-10-26T14:04:31.841Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="通讯">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026201405.png">
   
   
   
-  
+  <meta name="keywords" content="通讯">
 
   <!-- feed -->
   
@@ -78,11 +84,20 @@
 </header>
 
 
-<div class="widgets"></div>
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">USB to can的学习与踩坑</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%AD%A6%E4%B9%A0"><span class="toc-text">开源项目的学习</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BA%E4%BB%B6%E7%83%A7%E5%BD%95"><span class="toc-text">固件烧录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%B1%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text">驱动安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BD%8D%E6%9C%BA%E4%BD%BF%E7%94%A8%E5%8F%8A%E5%85%B6%E6%BC%94%E7%A4%BA"><span class="toc-text">上位机使用及其演示</span></a></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
 
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
 
       
@@ -92,11 +107,31 @@
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
     <span>Posted on&nbsp;<time datetime="2024-10-20T08:09:29.000Z">2024-10-20</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2024-10-20T08:09:29.455Z">2024-10-20</time></span>
+    <span>Updated on&nbsp;<time datetime="2024-10-26T14:04:31.841Z">2024-10-26</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>USB to can的学习与踩坑</span></h1>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一切的开始从一个项目说起，3D打印机的项目需要用到工具板，采用CAN通讯，由于不理解，决定学习一下CAN通讯，并由U_TO_C模块做起。</p>
+<h2 id="开源项目的学习"><a href="#开源项目的学习" class="headerlink" title="开源项目的学习"></a>开源项目的学习</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://oshwhub.com/hvan/usb_can">https://oshwhub.com/hvan/usb_can</a><br>项目地址</p>
+</blockquote>
+<p>打板后，存在问题，该种型号的排阻在淘宝上难以买到，0402封装比较难焊接。<br>原理图部分还是比较简单</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026201405.png"/></div></div>
+
+<p>不知道是什么原因，完全焊接上后无法使用，需要去掉，注意事项写在下面了</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026202024.png"/></div></div>
+<p>接头间距为sh1.0，没有的得提前买，建议一边接头，另一边杜邦线2.54mm母头</p>
+<p>焊接好的成品如图</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/ffa9bc153247bd691a8395790f7c80f.jpg"/></div></div>
+
+<p>后面有时间对其改造一下</p>
+<h2 id="固件烧录"><a href="#固件烧录" class="headerlink" title="固件烧录"></a>固件烧录</h2><p>这里我采用ST-LINK对其烧录，固件PCAN-USB。<br>固件及后续上位机放到了github的仓库里<br>烧录时，ST-LINK电源使用3.3V,录个视频，如下<br><video controls src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/80eeb3c0a746ea758e5179fe8d738510.mp4" title="movie.mp4.mp4"></video></p>
+<h2 id="驱动安装"><a href="#驱动安装" class="headerlink" title="驱动安装"></a>驱动安装</h2><p>分为LINUX与windows系统，这里仅介绍windows系统驱动及其上位机安装，linux后续有时间再议。<br>这里采用Pcan-view</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241026205930.png"/></div></div>
+
+
+<h2 id="上位机使用及其演示"><a href="#上位机使用及其演示" class="headerlink" title="上位机使用及其演示"></a>上位机使用及其演示</h2><p>两台USB-to-can实现互发</p>
 
 
 
