@@ -23,17 +23,17 @@
   <title>USB3.0拓展坞设计 - 无 忧</title>
 
   
-    <meta name="description" content="前言感觉自己天天开新坑却不填，想做一个USB3.0的拓展坞，单纯的集线器并不难，想加一些功能，有网口读取，SD卡，TF卡功能，视频传输，ST-link下载，串口。Ok，主要是想通过这个项目了解一下各种协议及其在硬件上的规定，作为练习。尽可能采用四层板。 USB3.0硬件设计规范  usb3.0六根信号线  D+ D- RX+ RX- TX+ TX-  D+与D-是兼容USB2.0的信号线，剩下四根">
+    <meta name="description" content="前言感觉自己天天开新坑却不填，想做一个USB3.0的拓展坞，单纯的集线器并不难，想加一些功能，有网口读取，SD卡，TF卡功能，视频传输，ST-link下载，串口，USB转CAN口。Ok，主要是想通过这个项目了解一下各种协议及其在硬件上的规定，作为练习。尽可能采用四层板。 USB3.0硬件设计规范  usb3.0六根信号线  D+ D- RX+ RX- TX+ TX-  D+与D-是兼容USB2.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="USB3.0拓展坞设计">
 <meta property="og:url" content="http://example.com/2024/10/22/USB3-0%E6%8B%93%E5%B1%95%E5%9D%9E%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="前言感觉自己天天开新坑却不填，想做一个USB3.0的拓展坞，单纯的集线器并不难，想加一些功能，有网口读取，SD卡，TF卡功能，视频传输，ST-link下载，串口。Ok，主要是想通过这个项目了解一下各种协议及其在硬件上的规定，作为练习。尽可能采用四层板。 USB3.0硬件设计规范  usb3.0六根信号线  D+ D- RX+ RX- TX+ TX-  D+与D-是兼容USB2.0的信号线，剩下四根">
+<meta property="og:description" content="前言感觉自己天天开新坑却不填，想做一个USB3.0的拓展坞，单纯的集线器并不难，想加一些功能，有网口读取，SD卡，TF卡功能，视频传输，ST-link下载，串口，USB转CAN口。Ok，主要是想通过这个项目了解一下各种协议及其在硬件上的规定，作为练习。尽可能采用四层板。 USB3.0硬件设计规范  usb3.0六根信号线  D+ D- RX+ RX- TX+ TX-  D+与D-是兼容USB2.0">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241023010951.png">
 <meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241023011019.png">
 <meta property="article:published_time" content="2024-10-21T20:01:40.000Z">
-<meta property="article:modified_time" content="2024-10-23T15:46:27.816Z">
+<meta property="article:modified_time" content="2024-10-25T03:21:14.922Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241023010951.png">
@@ -104,12 +104,12 @@
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
     <span>Posted on&nbsp;<time datetime="2024-10-21T20:01:40.000Z">2024-10-22</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2024-10-23T15:46:27.816Z">2024-10-23</time></span>
+    <span>Updated on&nbsp;<time datetime="2024-10-25T03:21:14.922Z">2024-10-25</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>USB3.0拓展坞设计</span></h1>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>感觉自己天天开新坑却不填，想做一个USB3.0的拓展坞，单纯的集线器并不难，想加一些功能，有网口读取，SD卡，TF卡功能，视频传输，ST-link下载，串口。Ok，主要是想通过这个项目了解一下各种协议及其在硬件上的规定，作为练习。<br>尽可能采用四层板。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>感觉自己天天开新坑却不填，想做一个USB3.0的拓展坞，单纯的集线器并不难，想加一些功能，有网口读取，SD卡，TF卡功能，视频传输，ST-link下载，串口，USB转CAN口。Ok，主要是想通过这个项目了解一下各种协议及其在硬件上的规定，作为练习。<br>尽可能采用四层板。</p>
 <h2 id="USB3-0硬件设计规范"><a href="#USB3-0硬件设计规范" class="headerlink" title="USB3.0硬件设计规范"></a>USB3.0硬件设计规范</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241023010951.png"/></div></div>
 <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241023011019.png"/></div></div>
 <p>usb3.0六根信号线</p>
