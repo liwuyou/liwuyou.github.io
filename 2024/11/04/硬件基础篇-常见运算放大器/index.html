@@ -20,33 +20,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>专业版立创EDA如何将pcb复制到另一个PCB中？ - 无 忧</title>
+  <title>硬件基础篇-常见运算放大器 - 无 忧</title>
 
   
-    <meta name="description" content="如题所示，下面有两块板    工艺边板是由其他文件克隆而来，我想在需要将工艺边板加到三和一小板中，如何操作？在工艺边板中框选待复制对象，按CTRL+C  然后再该pcb文件中按CTRL+V  在工艺边PCB视窗中不要左键确定，也不要右键取消，点击三和一小板，来到该板子   CTRL+V 复制  左键点击该PCB视窗，确定">
+    <meta name="description" content="前言由于设计一个霍尔线径检测模块，使用双49E霍尔，直接单片机模拟IO口读取，发现由于线径变化小，IO口读取的模拟值差值也小，分辨率低。需要加一个差分放大电路，于是决定复习一下运放的内容。主要关注的是运放的使用和仿真。 运放基本结构   当Up大于Un,输出主要有两个应用场景，比较器与放大器基本原理，虚短与虚断 仿真测试  疑问，为什么输出的不是5V？而是3.3V，改变5V，发现Vout&amp;#x3D">
 <meta property="og:type" content="article">
-<meta property="og:title" content="专业版立创EDA如何将pcb复制到另一个PCB中？">
-<meta property="og:url" content="http://example.com/2024/10/16/%E4%B8%93%E4%B8%9A%E7%89%88%E7%AB%8B%E5%88%9BEDA%E5%A6%82%E4%BD%95%E5%B0%86pcb%E5%A4%8D%E5%88%B6%E5%88%B0%E5%8F%A6%E4%B8%80%E4%B8%AAPCB%E4%B8%AD%EF%BC%9F/index.html">
+<meta property="og:title" content="硬件基础篇-常见运算放大器">
+<meta property="og:url" content="http://example.com/2024/11/04/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E5%B8%B8%E8%A7%81%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="如题所示，下面有两块板    工艺边板是由其他文件克隆而来，我想在需要将工艺边板加到三和一小板中，如何操作？在工艺边板中框选待复制对象，按CTRL+C  然后再该pcb文件中按CTRL+V  在工艺边PCB视窗中不要左键确定，也不要右键取消，点击三和一小板，来到该板子   CTRL+V 复制  左键点击该PCB视窗，确定">
+<meta property="og:description" content="前言由于设计一个霍尔线径检测模块，使用双49E霍尔，直接单片机模拟IO口读取，发现由于线径变化小，IO口读取的模拟值差值也小，分辨率低。需要加一个差分放大电路，于是决定复习一下运放的内容。主要关注的是运放的使用和仿真。 运放基本结构   当Up大于Un,输出主要有两个应用场景，比较器与放大器基本原理，虚短与虚断 仿真测试  疑问，为什么输出的不是5V？而是3.3V，改变5V，发现Vout&amp;#x3D">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002134.png">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002200.png">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002456.png">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002614.png">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002803.png">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002819.png">
-<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002903.png">
-<meta property="article:published_time" content="2024-10-15T16:20:20.000Z">
-<meta property="article:modified_time" content="2024-10-16T09:33:32.641Z">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104190101.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104190446.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104193629.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105031454.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105030958.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105031246.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105031332.png">
+<meta property="article:published_time" content="2024-11-04T10:11:56.000Z">
+<meta property="article:modified_time" content="2024-11-05T08:49:14.721Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="EDA">
+<meta property="article:tag" content="硬件基础">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002134.png">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104190101.png">
   
   
   
-  <meta name="keywords" content="EDA">
+  <meta name="keywords" content="硬件基础">
 
   <!-- feed -->
   
@@ -89,9 +89,7 @@
 
 <div class="widgets">
 
-
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/11/06/arduino%E7%82%B9%E4%BA%AE36-RGB-LEDs/"><span class="title">arduino点亮36 RGB LEDs</span></a><a class="item title" href="/2024/11/04/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E5%B8%B8%E8%A7%81%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/"><span class="title">硬件基础篇-常见运算放大器</span></a><a class="item title" href="/2024/10/20/USB-to-can%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%B8%A9%E5%9D%91/"><span class="title">USB to can的学习与踩坑</span></a><a class="item title" href="/2024/10/13/3D%E6%89%93%E5%8D%B0%E8%80%97%E6%9D%90%E7%9B%B4%E5%BE%84%E7%9A%84%E6%A3%80%E6%B5%8B%E6%96%B9%E6%A1%88/"><span class="title">3D打印耗材直径的检测方案</span></a><a class="item title" href="/2024/10/14/%E5%B8%B8%E8%A7%81%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE/"><span class="title">常见通讯协议</span></a></div></widget>
-
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">硬件基础篇-常见运算放大器</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E6%94%BE%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">运放基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%B5%8B%E8%AF%95"><span class="toc-text">仿真测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%8C%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-text">补充，名词解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E7%9F%AD%E8%99%9A%E6%96%AD"><span class="toc-text">虚短虚断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-text"></span></a></li></ol></div></div></widget>
 
 
 
@@ -110,28 +108,53 @@
 
 
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
-    <span>Posted on&nbsp;<time datetime="2024-10-15T16:20:20.000Z">2024-10-16</time></span>
+    <span>Posted on&nbsp;<time datetime="2024-11-04T10:11:56.000Z">2024-11-04</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2024-10-16T09:33:32.641Z">2024-10-16</time></span>
+    <span>Updated on&nbsp;<time datetime="2024-11-05T08:49:14.721Z">2024-11-05</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
-<h1 class="article-title"><span>专业版立创EDA如何将pcb复制到另一个PCB中？</span></h1>
-<p>如题所示，下面有两块板</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002134.png"/></div></div>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002200.png"/></div></div>
+<h1 class="article-title"><span>硬件基础篇-常见运算放大器</span></h1>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于设计一个霍尔线径检测模块，使用双49E霍尔，直接单片机模拟IO口读取，发现由于线径变化小，IO口读取的模拟值差值也小，分辨率低。需要加一个差分放大电路，于是决定复习一下运放的内容。<br>主要关注的是运放的使用和仿真。</p>
+<h2 id="运放基本结构"><a href="#运放基本结构" class="headerlink" title="运放基本结构"></a>运放基本结构</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104190101.png"/></div></div>
 
-<p>工艺边板是由其他文件克隆而来，我想在需要将工艺边板加到三和一小板中，如何操作？<br>在工艺边板中框选待复制对象，按CTRL+C</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002456.png"/></div></div>
-<p>然后再该pcb文件中按CTRL+V</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002614.png"/></div></div>
-<p>在工艺边PCB视窗中不要左键确定，也不要右键取消，点击三和一小板，来到该板子</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002803.png"/></div></div>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002819.png"/></div></div>
-<p>CTRL+V 复制</p>
-<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241016002903.png"/></div></div>
-<p>左键点击该PCB视窗，确定</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104190446.png"/></div></div>
+<p>当Up大于Un,输出<br>主要有两个应用场景，比较器与放大器<br>基本原理，虚短与虚断</p>
+<h3 id="仿真测试"><a href="#仿真测试" class="headerlink" title="仿真测试"></a>仿真测试</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241104193629.png"/></div></div>
+<blockquote>
+<p>疑问，为什么输出的不是5V？而是3.3V，改变5V，发现Vout&#x3D;VCC-1.6V</p>
+</blockquote>
+<p>实际测试了SOP-8的LMV358IDR芯片，输出5V.</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">在型号 LMV358IDR 中，IDR 代表的是封装和封装形式的后缀信息。具体解释如下：</span><br><span class="line"></span><br><span class="line">I：表示温度等级。I 通常代表 工业级温度范围，一般为 -40°C 至 +85°C。相比之下，商业级产品的温度范围通常是 0°C 至 70°C。</span><br><span class="line"></span><br><span class="line">D：表示封装类型。D 通常指 SOIC-8 封装（Small Outline Integrated Circuit，8引脚的小外形集成电路），是一种常见的表面贴装封装，适用于SMT（表面贴装技术）生产。</span><br><span class="line"></span><br><span class="line">R：表示封装卷带（Reel），也就是出厂包装方式。R 表示该芯片是通过 卷带包装 出厂，通常用于自动化生产线，便于机器自动拾取芯片。</span><br><span class="line"></span><br><span class="line">总结</span><br><span class="line">LMV358IDR 是 LMV358 的一个版本，具有 SOIC-8 封装，工业温度范围，且采用卷带包装，适合表面贴装生产。</span><br></pre></td></tr></table></figure>
 
+<h3 id="补充，名词解释"><a href="#补充，名词解释" class="headerlink" title="补充，名词解释"></a>补充，名词解释</h3><ul>
+<li>VCC (Voltage Common Collector):</li>
+</ul>
+<p>一般指正电源电压，通常用于表示NPN型晶体管电路的正电压。<br>在数字电路和集成电路（如CMOS、TTL逻辑）中，VCC通常指电源正极。</p>
+<ul>
+<li>VDD (Voltage Drain Drain):</li>
+</ul>
+<p>主要用于MOSFET和CMOS电路中，表示电源正极（例如CMOS电路中的+5V或+3.3V）。<br>对于数字集成电路，VDD也指正电源电压，与VCC类似。</p>
+<ul>
+<li>VSS (Voltage Source Source):</li>
+</ul>
+<p>一般指电源的负极或接地端，通常与VDD一起使用。<br>在MOSFET和CMOS电路中，VSS通常是电源地或负电压的标识。</p>
+<ul>
+<li>VEE (Voltage Emitter Emitter):</li>
+</ul>
+<p>主要用于PNP型晶体管电路，通常指电源的负电压。<br>在一些模拟电路和运算放大器电路中，VEE也用于表示负电源。</p>
+<ul>
+<li>VBAT (Voltage Battery):</li>
+</ul>
+<p>表示电池电压，通常用于电池供电的设备中。<br>在一些便携式或低功耗设备中，VBAT标识的是电池输入电压。</p>
+<h2 id="虚短虚断"><a href="#虚短虚断" class="headerlink" title="虚短虚断"></a>虚短虚断</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105031454.png"/></div></div>
+<p>虚断：输入阻抗无穷大，即电流为0</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105030958.png"/></div></div>
+<p>虚短: 当给运放引入负反馈时，Un&#x3D;Up</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105031246.png"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241105031332.png"/></div></div>
+
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
 
 
 <div class="article-footer reveal fs14">
@@ -144,7 +167,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2024/10/16/%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA/">无刷电机</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/10/14/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E5%B8%B8%E8%A7%81%E5%B0%81%E8%A3%85%E5%B7%A5%E8%89%BA/">硬件基础篇-常见封装工艺</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2024/11/06/arduino%E7%82%B9%E4%BA%AE36-RGB-LEDs/">arduino点亮36 RGB LEDs</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/10/23/%E5%9F%BA%E4%BA%8Esimplefoc-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E6%93%8D%E4%BD%9C%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E8%BD%AC%E5%8A%A8/">基于simplefoc 实现一个无刷电机操作另一个无刷电机转动</a></div></section></div>
 
 
 
