@@ -30,11 +30,21 @@
 <meta property="og:site_name" content="无 忧">
 <meta property="og:description" content="前言距离第一次接触51单片机已有两年之久，当时跟着江科大的视频学了两个星期，完成了一些基本操作，随后就不怎么接触了，而关于微机的底层和通讯在之后的时间里，一直都是零散的学习，刚好借助此次课程的机会，记录一下自己的微机的学习。只记录重要知识点，配合教材使用。  课程概述教材使用王晓萍的微机原理与接口技术教材分为3个部分进行教学  微控制器原理 微机接口技术 微机系统设计  微机概述微机两大分支  通">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216232907.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/85960bcb6d079350e6b5f5efb258773.jpg">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216022714.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023111.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023534.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023630.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023849.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216044452.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216055237.png">
 <meta property="article:published_time" content="2024-11-06T02:32:07.000Z">
-<meta property="article:modified_time" content="2024-11-20T17:47:03.525Z">
+<meta property="article:modified_time" content="2024-12-23T12:48:13.482Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="课程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216232907.png">
   
   
   
@@ -81,7 +91,7 @@
 
 <div class="widgets">
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">微机原理与接口技术</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%BF%B0"><span class="toc-text">课程概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%9C%BA%E6%A6%82%E8%BF%B0"><span class="toc-text">微机概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-text">硬件结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B2%E8%A7%A3"><span class="toc-text">知识点讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%91%A8%E6%9C%9F"><span class="toc-text">单片机的周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%A4%8D%E4%BD%8D"><span class="toc-text">单片机的复位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E7%A8%BF%E5%A4%8D%E4%BD%8D%EF%BC%9A"><span class="toc-text">文稿复位：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="toc-text">微控制器的工作模式</span></a></li></ol></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">微机原理与接口技术</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E6%A6%82%E8%BF%B0"><span class="toc-text">课程概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AE%E6%9C%BA%E6%A6%82%E8%BF%B0"><span class="toc-text">微机概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-text">硬件结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B2%E8%A7%A3"><span class="toc-text">知识点讲解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84%E5%88%86%E7%B1%BB"><span class="toc-text">存储结构分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0851%E7%A1%AC%E4%BB%B6%E8%B5%84%E6%BA%90"><span class="toc-text">0851硬件资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0851%E5%8A%9F%E8%83%BD%E7%89%B9%E7%82%B9%E8%AE%B0%E5%BF%86%E7%82%B9"><span class="toc-text">0851功能特点记忆点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0851%E5%8A%9F%E8%83%BD%E5%BC%95%E8%84%9A"><span class="toc-text">0851功能引脚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0851%E5%BC%95%E8%84%9A%E5%8A%9F%E8%83%BD%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="toc-text">0851引脚功能示意图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#0851%E6%8B%93%E5%B1%95%E5%A4%96%E9%83%A8ROM%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="toc-text">0851拓展外部ROM示意图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-text">指令系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">指令执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%91%A8%E6%9C%9F"><span class="toc-text">单片机的周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%89%87%E6%9C%BA%E7%9A%84%E5%A4%8D%E4%BD%8D"><span class="toc-text">单片机的复位</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E7%A8%BF%E5%A4%8D%E4%BD%8D%EF%BC%9A"><span class="toc-text">文稿复位：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F"><span class="toc-text">微控制器的工作模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-text">指令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#111%E6%9D%A1%E6%8C%87%E4%BB%A4"><span class="toc-text">111条指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-text">寻址方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E6%8C%87%E4%BB%A4"><span class="toc-text">伪指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F-1"><span class="toc-text">寻址方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F%E5%92%8C%E5%AF%BB%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="toc-text">寻址方式和寻址空间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD"><span class="toc-text">中断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E4%BF%A1"><span class="toc-text">通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E6%96%B9%E5%BC%8F%E5%88%86%E7%B1%BB"><span class="toc-text">传输方式分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E9%80%9A%E4%BF%A1"><span class="toc-text">异步串行通信</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A7%E6%A0%BC%E5%BC%8F"><span class="toc-text">帧格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E7%89%B9%E7%8E%87"><span class="toc-text">波特率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%A1%E9%AA%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">校验方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UART"><span class="toc-text">UART</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%AE%E7%9B%98"><span class="toc-text">键盘</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">代码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E4%BA%AELED"><span class="toc-text">点亮LED</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E6%97%B6"><span class="toc-text">延时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%94%AE%E6%8E%A7%E5%88%B6LED%E4%BA%AE%E7%81%AD"><span class="toc-text">按键控制LED亮灭</span></a></li></ol></li></ol></div></div></widget>
 
 
 
@@ -102,7 +112,7 @@
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
     <span>Posted on&nbsp;<time datetime="2024-11-06T02:32:07.000Z">2024-11-06</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2024-11-20T17:47:03.525Z">2024-11-21</time></span>
+    <span>Updated on&nbsp;<time datetime="2024-12-23T12:48:13.482Z">2024-12-23</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
@@ -120,7 +130,49 @@
 <li>通用计算机（PC）</li>
 <li>嵌入式计算机（MCU）</li>
 </ul>
-<h2 id="硬件结构"><a href="#硬件结构" class="headerlink" title="硬件结构"></a>硬件结构</h2><h2 id="知识点讲解"><a href="#知识点讲解" class="headerlink" title="知识点讲解"></a>知识点讲解</h2><h3 id="单片机的周期"><a href="#单片机的周期" class="headerlink" title="单片机的周期"></a>单片机的周期</h3><ul>
+<h2 id="硬件结构"><a href="#硬件结构" class="headerlink" title="硬件结构"></a>硬件结构</h2><h2 id="知识点讲解"><a href="#知识点讲解" class="headerlink" title="知识点讲解"></a>知识点讲解</h2><h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><ul>
+<li>输入输出设备</li>
+<li>存储器</li>
+<li>控制器与运算器</li>
+</ul>
+<h3 id="存储结构分类"><a href="#存储结构分类" class="headerlink" title="存储结构分类"></a>存储结构分类</h3><ul>
+<li>存算一体（哈佛结构）</li>
+<li>存算分开（冯诺依曼结构）</li>
+</ul>
+<h3 id="0851硬件资源"><a href="#0851硬件资源" class="headerlink" title="0851硬件资源"></a>0851硬件资源</h3><ul>
+<li>CPU</li>
+<li>RAM(128B数据存储器)</li>
+<li>ROM(4K程序存储器)</li>
+<li>4个8位IO口</li>
+<li>2个16位定时器&#x2F;计数器</li>
+<li>中断系统（5个中断源，2个优先级）</li>
+<li>1个全双工串行口</li>
+<li>SFR(21个特殊功能寄存器)</li>
+</ul>
+<h3 id="0851功能特点记忆点"><a href="#0851功能特点记忆点" class="headerlink" title="0851功能特点记忆点"></a>0851功能特点记忆点</h3><ul>
+<li>内部RAM,256B（2^8）,地址为00H~FFH</li>
+<li>外部RAM，最大64KB（2^16），地址0000H~FFFFH</li>
+<li>内部ROM,4~64K,以8K为例(2^13)</li>
+<li>外部ROM,最大64K，地址0000H~FFFFH</li>
+<li>指令系统，复杂指令，CISC，111条。</li>
+</ul>
+<h3 id="0851功能引脚"><a href="#0851功能引脚" class="headerlink" title="0851功能引脚"></a>0851功能引脚</h3><ul>
+<li>RST  需要两个机器周期的高电平</li>
+<li><del>EA</del>  内部外部ROM片选，EA&#x3D;0,只内，EA&#x3D;1，在ROM大于FFH时转外部</li>
+<li>ALE 低八位地址锁存允许信号输出端，有效时输出高脉冲</li>
+<li><del>PSEN</del> 与外部ROM的<del>OE</del>相连，外部ROM选通输出端</li>
+</ul>
+<h3 id="0851引脚功能示意图"><a href="#0851引脚功能示意图" class="headerlink" title="0851引脚功能示意图"></a>0851引脚功能示意图</h3><h3 id="0851拓展外部ROM示意图"><a href="#0851拓展外部ROM示意图" class="headerlink" title="0851拓展外部ROM示意图"></a>0851拓展外部ROM示意图</h3><h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><ul>
+<li>PC（程序计数器，16位）</li>
+<li>IR(指令寄存器，8位，存放当前指令的操作码)</li>
+<li>ID（指令译码器，）</li>
+</ul>
+<h3 id="指令执行过程"><a href="#指令执行过程" class="headerlink" title="指令执行过程"></a>指令执行过程</h3><ul>
+<li>取指令</li>
+<li>分析指令</li>
+<li>执行指令</li>
+</ul>
+<h3 id="单片机的周期"><a href="#单片机的周期" class="headerlink" title="单片机的周期"></a>单片机的周期</h3><ul>
 <li>时钟周期  $1&#x2F;f_{osc}$</li>
 <li>状态周期  $S &#x3D; 2&#x2F;f_{osc}$</li>
 <li>机器周期  $T_{M} &#x3D; 12&#x2F;f_{osc}$</li>
@@ -149,6 +201,115 @@
 <p>注意：由于RAM数据在掉电后丢失，上电复位RAM数据为随机数，按键复位，内部RAM数据没有影响</p>
 <h3 id="微控制器的工作模式"><a href="#微控制器的工作模式" class="headerlink" title="微控制器的工作模式"></a>微控制器的工作模式</h3><p>微控制器的工作方式文稿：<br>微控制器共有三种工作方式，低功耗工作方式，程序执行方式和复位方式。其中，低功耗工作方式（省电方式）又分为休闲方式和掉电方式。<br>程序执行方式是微控制器的基本工作方式。<br>复位方式，复位是微控制器的初始化操作，复位后，SFR内容恢复初始值，CPU重新开始运行<br>低功耗方式又分为休闲方式和掉电方式。<br>低功耗方式有电源控制寄存器PCON的IDL位和PD位控制。<br>默认该两位为零，当pd为一的时候，进入掉电方式， Idl为一的时候，进入休闲方式，两者都为一的时候，进入掉电方式。</p>
 <p>休闲方式(ID)时，内部时钟电路正常工作，CPU停止工作，中断，串行口定时器继续工作。可通过复位或者中断终止休闲方式。在休闲期间，中端触发后，IDL请0，退出休闲方式<br>掉电方式（PD）时，内部时钟不工作，所有功能单元停止工作。只能通过复位退出。</p>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><h2 id="111条指令"><a href="#111条指令" class="headerlink" title="111条指令"></a>111条指令</h2><h4 id="寻址方式"><a href="#寻址方式" class="headerlink" title="寻址方式"></a>寻址方式</h4><ul>
+<li>立即寻址（MOV A, #68H）</li>
+<li>直接寻址(MOV A,68H  ;将68H单元格的数据传送到A)</li>
+<li>寄存器寻址（MOV A,Rn）</li>
+<li>寄存器间接寻址（MOV A,@Rn）</li>
+<li>变址寻址</li>
+<li>相对寻址</li>
+<li>位寻址</li>
+</ul>
+<h3 id="伪指令"><a href="#伪指令" class="headerlink" title="伪指令"></a>伪指令</h3><p>用于帮助开发者更好地管理程序的结构和数据。这些指令本身并不会直接转换为机器代码，而是为汇编器提供信息或执行某些特定功能</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">1. ORG （起始地址）</span><br><span class="line">用于指定代码或数据的起始地址。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">asm</span><br><span class="line">复制代码</span><br><span class="line">ORG 0000H     ; 从地址 0x0000 开始存储程序</span><br><span class="line"></span><br><span class="line">2. DB （定义字节数据）</span><br><span class="line">用于定义字节数据，常用于存储常量或初始化数据。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">asm</span><br><span class="line">复制代码</span><br><span class="line">DATA1: DB 0AH  ; 定义一个常量 0x0A</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3. DW （定义字数据）</span><br><span class="line">用于定义双字节数据（16 位）。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">asm</span><br><span class="line">复制代码</span><br><span class="line">DATA2: DW 1234H  ; 定义一个 16 位的常量 0x1234</span><br><span class="line">4. EQU （定义符号常量）</span><br><span class="line">为某个值分配一个符号名称，类似于 C 中的宏定义。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">asm</span><br><span class="line">复制代码</span><br><span class="line">MYCONST EQU 05H  ; 定义一个常量 MYCONST，其值为 0x05</span><br><span class="line">MOV A, MYCONST   ; 将 0x05 加载到 A 寄存器</span><br><span class="line">5. END （程序结束）</span><br><span class="line">用于指示汇编器程序的结束。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">asm</span><br><span class="line">复制代码</span><br><span class="line">END             ; 汇编结束</span><br><span class="line">6. BIT （位地址赋值）</span><br><span class="line">位寻址区在 8051 的 RAM 中占用地址范围 20H ~ 2FH，共 16 字节</span><br><span class="line"></span><br><span class="line">name BIT address</span><br><span class="line">name：符号名称，用于标识位变量。</span><br><span class="line">address：位地址（范围是 00H 到 7FH）</span><br><span class="line"></span><br><span class="line">7. DS （定义存储空间）</span><br><span class="line">分配一段未初始化的内存，用于数据存储。</span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">asm</span><br><span class="line">复制代码</span><br><span class="line">BUFFER: DS 10   ; 分配 10 个字节的存储空间</span><br></pre></td></tr></table></figure>
+<h3 id="寻址方式-1"><a href="#寻址方式-1" class="headerlink" title="寻址方式"></a>寻址方式</h3><ul>
+<li><p>立即数寻址：<br>操作数是指令中直接给出的常数值。<br>例：MOV A, #10（将 10 直接送入 A 寄存器）。</p>
+</li>
+<li><p>直接寻址：<br>操作数是内存地址，通过该地址访问数据。<br>例：MOV A, 30H（将 0x30 地址的数据送入 A 寄存器）。</p>
+</li>
+<li><p>寄存器寻址：<br>操作数是寄存器的内容。<br>例：MOV A, R0（将 R0 寄存器的值送入 A 寄存器）。</p>
+</li>
+<li><p>寄存器间接寻址：<br>操作数的地址由寄存器指向。<br>例：MOV A, @R0（R0 寄存器的内容作为地址，从该地址读取数据送入 A 寄存器）。</p>
+</li>
+</ul>
+<p>8051 单片机中有 4 组工作寄存器组，每组包含 8 个寄存器 (R0 至 R7)。因此，8051 单片机总共有 32 个工作寄存器。</p>
+<ul>
+<li><p>变址寻址：<br>地址由基地址和偏移量（即变址）计算得到。<br>例：MOV A, @R0+DPTR（DPTR 和 R0 的内容相加作为地址，从该地址读取数据）。</p>
+</li>
+<li><p>相对寻址：<br>地址是相对于当前指令地址的偏移量。<br>例：SJMP LABEL（跳转到当前地址偏移 LABEL 的位置）。</p>
+</li>
+<li><p>位寻址：<br>操作数是内存中单个位，直接操作某一位。<br>例：SETB 30H.0（将 0x30 地址的第 0 位设为 1）。</p>
+</li>
+</ul>
+<h3 id="寻址方式和寻址空间"><a href="#寻址方式和寻址空间" class="headerlink" title="寻址方式和寻址空间"></a>寻址方式和寻址空间</h3><h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><h2 id="通信"><a href="#通信" class="headerlink" title="通信"></a>通信</h2><h3 id="传输方式分类"><a href="#传输方式分类" class="headerlink" title="传输方式分类"></a>传输方式分类</h3><ul>
+<li><p>串行通信</p>
+<p>  数据传输速度快。<br>  需要更多的传输线。<br>  适合短距离通信。<br>  距离增长时，位数增多时，会提高硬件成本，降低通信成功率</p>
+</li>
+<li><p>并行通信</p>
+<p>  线路简单，成本低<br>  适合长距离通信<br>  传输速度慢</p>
+</li>
+</ul>
+<p>按时钟线分类</p>
+<ul>
+<li>异步通信</li>
+<li>同步通信</li>
+</ul>
+<p>按传送方向分类</p>
+<ul>
+<li>单工</li>
+<li>半双工</li>
+<li>双工</li>
+</ul>
+<h3 id="异步串行通信"><a href="#异步串行通信" class="headerlink" title="异步串行通信"></a>异步串行通信</h3><p>例：UART、RS-232、RS-485</p>
+<h4 id="帧格式"><a href="#帧格式" class="headerlink" title="帧格式"></a>帧格式</h4><ul>
+<li><p>起始位</p>
+</li>
+<li><p>数据位<br>  低位在前，高位在后</p>
+</li>
+<li><p>奇偶校验位  </p>
+<p>  这是一个用于错误检测的位，可以是无校验(None)、奇校验(Odd)、偶校验(Even)、标记校验(Mark)或空位校验(Space)。</p>
+<p>  确保数据帧与校验位的1个数为奇数为奇校验，为偶数，偶校验</p>
+</li>
+<li><p>停止位</p>
+</li>
+</ul>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216232907.png"/></div></div>
+<p>常用的帧格式为：1位起始位+8位数据位（一个字节）+无校验位+1位停止位 即一帧10个bit</p>
+<h4 id="波特率"><a href="#波特率" class="headerlink" title="波特率"></a>波特率</h4><p>对于串口通信，波特率代表每秒传输的bit的数量。<br>如常用的9600波特率代表了一秒钟可以传输9600个bit的信息。即信号宽度为0.104ms</p>
+<h4 id="校验方式"><a href="#校验方式" class="headerlink" title="校验方式"></a>校验方式</h4><ul>
+<li>字节的奇偶校验</li>
+<li>数据块的累加和校验</li>
+<li>数据块的循环冗余校验CRC<br>  把数据块看成二进制数，用特定数除以它，取余数</li>
+</ul>
+<h3 id="UART"><a href="#UART" class="headerlink" title="UART"></a>UART</h3><h3 id="键盘"><a href="#键盘" class="headerlink" title="键盘"></a>键盘</h3><p>工作方式</p>
+<ul>
+<li>编程扫描方式</li>
+<li>定时扫描方式</li>
+<li>中断扫描方式</li>
+</ul>
+<p>独立键盘</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/85960bcb6d079350e6b5f5efb258773.jpg"/></div></div>
+
+<p>矩阵式键盘</p>
+<ul>
+<li>行扫描式</li>
+<li>线路反转法</li>
+</ul>
+<h2 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h2><h3 id="点亮LED"><a href="#点亮LED" class="headerlink" title="点亮LED"></a>点亮LED</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">; 点亮 LED 的汇编程序</span><br><span class="line">; 假设 LED 连接到 P1.0，低电平点亮</span><br><span class="line"></span><br><span class="line">ORG 0000H        ; 程序起始地址为 0</span><br><span class="line">START:           </span><br><span class="line">    MOV P1, #0FEH ; 初始化 P1，P1.0 输出低电平，其他引脚输出高电平</span><br><span class="line">                   ; P1 = 1111 1110 (FEH)，即 P1.0 = 0 (点亮 LED)</span><br><span class="line">HERE:             </span><br><span class="line">    SJMP HERE     ; 无限循环，保持 LED 点亮</span><br><span class="line"></span><br><span class="line">END               ; 程序结束</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="延时"><a href="#延时" class="headerlink" title="延时"></a>延时</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216022714.png"/></div></div>
+
+<p>单循环</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023111.png"/></div></div>
+<p>注意：当X为0时，实际是256，R0是8位寄存器（同R1,R2,R3）;0&lt;&#x3D;R0&lt;&#x3D;256</p>
+<p>双重循环</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023534.png"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023630.png"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216023849.png"/></div></div>
+
+<p>亮灯，一闪一闪</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">	ORG 10H            ; 程序起始地址</span><br><span class="line">	MOV P1, #00H   ; 将 P1 端口的所有位设置为 0	</span><br><span class="line">	</span><br><span class="line">START:             ; 主程序开始</span><br><span class="line">	</span><br><span class="line">    SETB P1.0      ; 置P1.0高电平，LED点亮</span><br><span class="line">    LCALL DELAY    ; 调用延时程序</span><br><span class="line">    CLR P1.0       ; 置P1.0低电平，LED熄灭</span><br><span class="line">    LCALL DELAY    ; 调用延时程序</span><br><span class="line">    AJMP START     ; 跳转到START，实现循环</span><br><span class="line"></span><br><span class="line">DELAY:             ; 延时子程序</span><br><span class="line">    MOV R7, #250   ; 外层循环计数器初始化，R7 = 250</span><br><span class="line">D1: MOV R6, #250   ; 内层循环计数器初始化，R6 = 250</span><br><span class="line">D2: DJNZ R6, D2    ; 内层循环：R6倒数，直到为0</span><br><span class="line">    DJNZ R7, D1    ; 外层循环：R7倒数，直到为0</span><br><span class="line">    RET            ; 延时完成，返回主程序</span><br><span class="line"></span><br><span class="line">END                ; 程序结束</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">DJNZ 指令：递减寄存器 R7 的值，如果不为0，跳转到标号 D1</span><br><span class="line">RET  返回调用 LCALL DELAY 的位置</span><br><span class="line">AJMP	无条件跳转	短跳转指令，适用于小程序。</span><br></pre></td></tr></table></figure>
+
+<h3 id="按键控制LED亮灭"><a href="#按键控制LED亮灭" class="headerlink" title="按键控制LED亮灭"></a>按键控制LED亮灭</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216044452.png"/></div></div>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ORG 0000H              ; 程序起始地址</span><br><span class="line"></span><br><span class="line">CLR P1.0               ; 清除 P1.0，设置 P1.0 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">START:                 ; 主程序开始</span><br><span class="line">    SETB P0.0          ; 设置 P0.0 为高电平（使能触发条件）</span><br><span class="line">    JB P0.0, LIG       ; 如果 P0.0 为高电平（1），跳转到 LIG 标签处（LED熄灭）</span><br><span class="line">    SETB P1.0          ; 否则设置 P1.0 为高电平（LED点亮）</span><br><span class="line">    SJMP START         ; 跳回 START，形成循环</span><br><span class="line"></span><br><span class="line">LIG:                   ; LIG 标签，LED 熄灭部分</span><br><span class="line">    CLR P1.0           ; 清除 P1.0，设置 P1.0 为低电平（LED熄灭）</span><br><span class="line">    SJMP START         ; 跳回 START，形成循环</span><br><span class="line"></span><br><span class="line">END                     ; 程序结束</span><br><span class="line"></span><br><span class="line">;JB P0.0, LIG：检查 P0.0 引脚的电平。如果 P0.0 为高电平（1），则跳转到 LIG 标签，否则继续执行下一条指令。</span><br></pre></td></tr></table></figure>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241216055237.png"/></div></div>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ORG 0000H              ; 程序起始地址</span><br><span class="line"></span><br><span class="line">CLR P1.0               ; 清除 P1.0，设置 P1.0 为低电平（LED熄灭）</span><br><span class="line">CLR P1.1               ; 清除 P1.1，设置 P1.1 为低电平（LED熄灭）</span><br><span class="line">CLR P1.2               ; 清除 P1.2，设置 P1.2 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">START:                 ; 主程序开始</span><br><span class="line">    SETB P0.0          ; 设置 P0.0 为高电平（开关启用）</span><br><span class="line">    SETB P0.1          ; 设置 P0.1 为高电平（开关启用）</span><br><span class="line">    SETB P0.2          ; 设置 P0.2 为高电平（开关启用）</span><br><span class="line">    </span><br><span class="line">    ; 控制 P1.0 LED</span><br><span class="line">    JB P0.0, LIGO      ; 如果 P0.0 为高电平（1），跳转到 LIGO（LED熄灭）</span><br><span class="line">    SETB P1.0          ; 否则设置 P1.0 为高电平（LED亮）</span><br><span class="line">    SJMP START         ; 跳回 START，形成循环</span><br><span class="line">LIGO:</span><br><span class="line">    CLR P1.0           ; 清除 P1.0，设置 P1.0 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">next1:                 ; 检查 P0.1 控制 P1.1 LED</span><br><span class="line">    JB P0.1, LIG1      ; 如果 P0.1 为高电平（1），跳转到 LIG1（LED熄灭）</span><br><span class="line">    SETB P1.1          ; 否则设置 P1.1 为高电平（LED亮）</span><br><span class="line">    SJMP next2         ; 跳到 next2，继续下一步</span><br><span class="line">LIG1:</span><br><span class="line">    CLR P1.1           ; 清除 P1.1，设置 P1.1 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">next2:                 ; 检查 P0.2 控制 P1.2 LED</span><br><span class="line">    JB P0.2, LIG2      ; 如果 P0.2 为高电平（1），跳转到 LIG2（LED熄灭）</span><br><span class="line">    SETB P1.2          ; 否则设置 P1.2 为高电平（LED亮）</span><br><span class="line">    SJMP next3         ; 跳到 next3，继续下一步</span><br><span class="line">LIG2:</span><br><span class="line">    CLR P1.2           ; 清除 P1.2，设置 P1.2 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">next3:                 ; 检查 P0.3 控制 P1.3 LED</span><br><span class="line">    JB P0.3, LIG3      ; 如果 P0.3 为高电平（1），跳转到 LIG3（LED熄灭）</span><br><span class="line">    SETB P1.3          ; 否则设置 P1.3 为高电平（LED亮）</span><br><span class="line">    SJMP next4         ; 跳到 next4，继续下一步</span><br><span class="line"></span><br><span class="line">next4:                 ; 检查 P0.4 控制 P1.4 LED</span><br><span class="line">    JB P0.4, LIG4      ; 如果 P0.4 为高电平（1），跳转到 LIG4（LED熄灭）</span><br><span class="line">    SETB P1.4          ; 否则设置 P1.4 为高电平（LED亮）</span><br><span class="line">    SJMP START         ; 跳回 START，形成循环</span><br><span class="line"></span><br><span class="line">LIG3:</span><br><span class="line">    CLR P1.3           ; 清除 P1.3，设置 P1.3 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">LIG4:</span><br><span class="line">    CLR P1.4           ; 清除 P1.4，设置 P1.4 为低电平（LED熄灭）</span><br><span class="line"></span><br><span class="line">SJMP START             ; 跳回 START，形成循环</span><br><span class="line"></span><br><span class="line">END                     ; 程序结束</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">;1. 仔细体会本段仿真效果，再删除延时脚本程序编译之后，你看看会有什么效果？</span><br><span class="line">;2. 你将会深刻理解LED产生闪烁的原因，分析为什么会闪烁？</span><br><span class="line">;3. 延时脚本程序的延时长短效果比较。</span><br><span class="line">;4. 本例为软件防抖，硬件防抖可参见李群芳编的《单片机原理、接口及应用--嵌入式系统技术基础》中的P87页。</span><br><span class="line"></span><br><span class="line">ORG 0000H</span><br><span class="line">ABC: MOV P0, #0FFH   ;高四位的LED全灭，低四位开关输入线送1</span><br><span class="line">     MOV A, P0        ;读P0口引脚开关状态并送A</span><br><span class="line">     SWAP A           ;低四位开关状态转换到高四位</span><br><span class="line">     ANL A, #0F0H     ;保留高四位</span><br><span class="line">     MOV P0, A        ;从P0口输出</span><br><span class="line">     LCALL DELAY</span><br><span class="line">     SJMP ABC         ;循环</span><br><span class="line"></span><br><span class="line">DELAY:</span><br><span class="line">     MOV R6, #20      ;原始代码中R6，R7的值若太小，则会有余辉鬼辉效果</span><br><span class="line">     DL2: MOV R7, #7DH</span><br><span class="line">     DL1: NOP</span><br><span class="line">          NOP</span><br><span class="line">          DJNZ R7, DL1</span><br><span class="line">          DJNZ R6, DL2</span><br><span class="line">          RET</span><br><span class="line">END</span><br></pre></td></tr></table></figure>
 
 
 
