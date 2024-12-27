@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>硬件基础篇-标识篇 - 无 忧</title>
+
+  
+    <meta name="description" content="前言电路板上常常会有很多标识，那么这些标识都是什么意思呢？ 常见标识  VCC GND VEE  负电压，出现在常用于运算放大器、电机驱动等电路中。   VDD  表示供电电压，特别是对于 MOSFET 或 CMOS 电路来说，VDD 通常是指正电压源。VDD 也可以用于表示其它种类的正电源。   VSS  VSS 常用于数字电路中，表示地（地电压）。在 CMOS 电路中，VSS 一般是地，VDD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="硬件基础篇-标识篇">
+<meta property="og:url" content="http://example.com/2024/12/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%A0%87%E8%AF%86%E7%AF%87/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="前言电路板上常常会有很多标识，那么这些标识都是什么意思呢？ 常见标识  VCC GND VEE  负电压，出现在常用于运算放大器、电机驱动等电路中。   VDD  表示供电电压，特别是对于 MOSFET 或 CMOS 电路来说，VDD 通常是指正电压源。VDD 也可以用于表示其它种类的正电源。   VSS  VSS 常用于数字电路中，表示地（地电压）。在 CMOS 电路中，VSS 一般是地，VDD">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-25T15:54:51.000Z">
+<meta property="article:modified_time" content="2024-12-25T16:02:48.870Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="硬件基础">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="硬件基础">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">硬件基础篇-标识篇</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-VCC%EF%BC%88Voltage-Common-Collector%EF%BC%89"><span class="toc-text">1. VCC（Voltage Common Collector）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GND%EF%BC%88Ground%EF%BC%89"><span class="toc-text">2. GND（Ground）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-VDD%EF%BC%88Voltage-Drain-Drain%EF%BC%89"><span class="toc-text">3. VDD（Voltage Drain Drain）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-VSS%EF%BC%88Voltage-Source-Source%EF%BC%89"><span class="toc-text">4. VSS（Voltage Source Source）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-VEE"><span class="toc-text">5. VEE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-3V%E3%80%815V%E3%80%8112V-%E7%AD%89"><span class="toc-text">6. 3.3V、5V、12V 等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-A%E3%80%81B%E3%80%81C-%E7%AD%89"><span class="toc-text">7. A、B、C 等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-SDA-SCL"><span class="toc-text">8. SDA &#x2F; SCL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-TX-RX"><span class="toc-text">9. TX &#x2F; RX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-PWM"><span class="toc-text">10. PWM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-RST%EF%BC%88Reset%EF%BC%89"><span class="toc-text">11. RST（Reset）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-NC%EF%BC%88No-Connection%EF%BC%89"><span class="toc-text">12. NC（No Connection）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-TP%EF%BC%88Test-Point%EF%BC%89"><span class="toc-text">13. TP（Test Point）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-F0-F1-F2-%E7%AD%89"><span class="toc-text">14. F0, F1, F2 等</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-PWR"><span class="toc-text">15. PWR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#16-LED%E3%80%81LD"><span class="toc-text">16. LED、LD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#17-C%E3%80%81R%E3%80%81L%E3%80%81D"><span class="toc-text">17. C、R、L、D</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#18-F%EF%BC%88Fuse%EF%BC%89"><span class="toc-text">18. F（Fuse）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#19-Jumper"><span class="toc-text">19. Jumper</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-V-V"><span class="toc-text">20. V+ &#x2F; V-</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2024-12-25T15:54:51.000Z">2024-12-25</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2024-12-25T16:02:48.870Z">2024-12-26</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>硬件基础篇-标识篇</span></h1>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>电路板上常常会有很多标识，那么这些标识都是什么意思呢？</p>
+<p>常见标识</p>
+<ul>
+<li>VCC</li>
+<li>GND</li>
+<li>VEE <ul>
+<li>负电压，出现在常用于运算放大器、电机驱动等电路中。</li>
+</ul>
+</li>
+<li>VDD <ul>
+<li>表示供电电压，特别是对于 MOSFET 或 CMOS 电路来说，VDD 通常是指正电压源。VDD 也可以用于表示其它种类的正电源。</li>
+</ul>
+</li>
+<li>VSS <ul>
+<li>VSS 常用于数字电路中，表示地（地电压）。在 CMOS 电路中，VSS 一般是地，VDD 是正电源。</li>
+</ul>
+</li>
+</ul>
+<p>电路板上常见的标识有很多，通常用于指示电源、信号线、接地等。以下是一些常见标识及其含义：</p>
+<h3 id="1-VCC（Voltage-Common-Collector）"><a href="#1-VCC（Voltage-Common-Collector）" class="headerlink" title="1. VCC（Voltage Common Collector）"></a>1. <strong>VCC（Voltage Common Collector）</strong></h3><ul>
+<li><strong>含义</strong>：通常表示正电源电压。VCC 是 “Voltage at the Common Collector” 的缩写，常用于集成电路（IC）和其他元器件的电源引脚。VCC 通常与电路板上的正电源连接。</li>
+<li><strong>常见电压</strong>：5V、3.3V 等。</li>
+</ul>
+<h3 id="2-GND（Ground）"><a href="#2-GND（Ground）" class="headerlink" title="2. GND（Ground）"></a>2. <strong>GND（Ground）</strong></h3><ul>
+<li><strong>含义</strong>：表示地（接地）或零电压参考点。在电路中，GND 是电路的共同地，所有的信号和电源都相对于 GND 定义电压。接地可以减少噪声，保证电路正常工作。</li>
+</ul>
+<h3 id="3-VDD（Voltage-Drain-Drain）"><a href="#3-VDD（Voltage-Drain-Drain）" class="headerlink" title="3. VDD（Voltage Drain Drain）"></a>3. <strong>VDD（Voltage Drain Drain）</strong></h3><ul>
+<li><strong>含义</strong>：表示供电电压，特别是对于 MOSFET 或 CMOS 电路来说，VDD 通常是指正电压源。VDD 也可以用于表示其它种类的正电源。</li>
+</ul>
+<h3 id="4-VSS（Voltage-Source-Source）"><a href="#4-VSS（Voltage-Source-Source）" class="headerlink" title="4. VSS（Voltage Source Source）"></a>4. <strong>VSS（Voltage Source Source）</strong></h3><ul>
+<li><strong>含义</strong>：VSS 常用于数字电路中，表示地（地电压）。在 CMOS 电路中，VSS 一般是地，VDD 是正电源。</li>
+</ul>
+<h3 id="5-VEE"><a href="#5-VEE" class="headerlink" title="5. VEE"></a>5. <strong>VEE</strong></h3><ul>
+<li><strong>含义</strong>：表示负电源电压，常用于运算放大器、电机驱动等电路中。</li>
+</ul>
+<h3 id="6-3-3V、5V、12V-等"><a href="#6-3-3V、5V、12V-等" class="headerlink" title="6. 3.3V、5V、12V 等"></a>6. <strong>3.3V、5V、12V 等</strong></h3><ul>
+<li><strong>含义</strong>：这些标识直接表示电路板上的电压值，通常是电源引脚或者输入电源端口。这些标识对应的是不同的电源电压，分别用于供电给不同的元器件，如微控制器、传感器、LED等。</li>
+</ul>
+<h3 id="7-A、B、C-等"><a href="#7-A、B、C-等" class="headerlink" title="7. A、B、C 等"></a>7. <strong>A、B、C 等</strong></h3><ul>
+<li><strong>含义</strong>：常用于表示信号线，特别是在模拟信号或差分信号传输中。例如，A&#x2F;B 线可以是差分信号的正负极。C、D 等可能是其他信号通道的标识。</li>
+</ul>
+<h3 id="8-SDA-SCL"><a href="#8-SDA-SCL" class="headerlink" title="8. SDA &#x2F; SCL"></a>8. <strong>SDA &#x2F; SCL</strong></h3><ul>
+<li><strong>含义</strong>：在 I2C 总线通信中，SDA 是数据线（Serial Data），SCL 是时钟线（Serial Clock）。这两个线用于微控制器之间的通信。</li>
+</ul>
+<h3 id="9-TX-RX"><a href="#9-TX-RX" class="headerlink" title="9. TX &#x2F; RX"></a>9. <strong>TX &#x2F; RX</strong></h3><ul>
+<li><strong>含义</strong>：表示串口通信中的发送（TX）和接收（RX）信号。TX 是数据传输线，RX 是数据接收线，通常用于 UART、RS232 或其他串行通信协议。</li>
+</ul>
+<h3 id="10-PWM"><a href="#10-PWM" class="headerlink" title="10. PWM"></a>10. <strong>PWM</strong></h3><ul>
+<li><strong>含义</strong>：表示脉宽调制（Pulse Width Modulation）信号。常用于控制电机速度、LED亮度等应用。PWM 信号的频率和占空比决定了控制设备的输出效果。</li>
+</ul>
+<h3 id="11-RST（Reset）"><a href="#11-RST（Reset）" class="headerlink" title="11. RST（Reset）"></a>11. <strong>RST（Reset）</strong></h3><ul>
+<li><strong>含义</strong>：表示复位引脚。复位引脚通常用于初始化系统或设备，将其恢复到默认状态。</li>
+</ul>
+<h3 id="12-NC（No-Connection）"><a href="#12-NC（No-Connection）" class="headerlink" title="12. NC（No Connection）"></a>12. <strong>NC（No Connection）</strong></h3><ul>
+<li><strong>含义</strong>：表示该引脚没有连接，也没有实际用途。通常用于封装或设计时的占位。</li>
+</ul>
+<h3 id="13-TP（Test-Point）"><a href="#13-TP（Test-Point）" class="headerlink" title="13. TP（Test Point）"></a>13. <strong>TP（Test Point）</strong></h3><ul>
+<li><strong>含义</strong>：表示测试点。测试点是电路板上为便于调试、测试和测量而特意设计的引脚或位置，通常连接到某些重要的信号线上。</li>
+</ul>
+<h3 id="14-F0-F1-F2-等"><a href="#14-F0-F1-F2-等" class="headerlink" title="14. F0, F1, F2 等"></a>14. <strong>F0, F1, F2 等</strong></h3><ul>
+<li><strong>含义</strong>：用于表示滤波器或频率响应标识，常见于电源滤波电路或者其他高频电路。</li>
+</ul>
+<h3 id="15-PWR"><a href="#15-PWR" class="headerlink" title="15. PWR"></a>15. <strong>PWR</strong></h3><ul>
+<li><strong>含义</strong>：表示电源或电源输入端。通常用于电源模块或设备的电源输入引脚。</li>
+</ul>
+<h3 id="16-LED、LD"><a href="#16-LED、LD" class="headerlink" title="16. LED、LD"></a>16. <strong>LED、LD</strong></h3><ul>
+<li><strong>含义</strong>：表示LED（发光二极管）的位置，LD 通常是指 LED 灯的标识。</li>
+</ul>
+<h3 id="17-C、R、L、D"><a href="#17-C、R、L、D" class="headerlink" title="17. C、R、L、D"></a>17. <strong>C、R、L、D</strong></h3><ul>
+<li><strong>含义</strong>：<ul>
+<li><strong>C</strong>：电容器（Capacitor）</li>
+<li><strong>R</strong>：电阻器（Resistor）</li>
+<li><strong>L</strong>：电感器（Inductor）</li>
+<li><strong>D</strong>：二极管（Diode）</li>
+</ul>
+</li>
+</ul>
+<h3 id="18-F（Fuse）"><a href="#18-F（Fuse）" class="headerlink" title="18. F（Fuse）"></a>18. <strong>F（Fuse）</strong></h3><ul>
+<li><strong>含义</strong>：表示保险丝。通常用于过电流保护，电路中常常有保险丝标识。</li>
+</ul>
+<h3 id="19-Jumper"><a href="#19-Jumper" class="headerlink" title="19. Jumper"></a>19. <strong>Jumper</strong></h3><ul>
+<li><strong>含义</strong>：用于连接电路中两个点的跳线，常见于设置电路选项、开关配置等。</li>
+</ul>
+<h3 id="20-V-V"><a href="#20-V-V" class="headerlink" title="20. V+ &#x2F; V-"></a>20. <strong>V+ &#x2F; V-</strong></h3><ul>
+<li><strong>含义</strong>：分别表示正电压和负电压。常用于表示双极性电源电路中的两个电压极。</li>
+</ul>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>这些标识帮助我们理解电路板的设计和功能，确保连接正确、功能正常。每个标识都有特定的意义，理解这些标识对于设计和调试硬件电路非常重要。</p>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2024/12/26/%E7%A1%AC%E4%BB%B6%E8%BF%9B%E9%98%B6%E7%AF%87-%E5%B1%82%E5%8F%A0%E7%BB%93%E6%9E%84/">硬件进阶篇-层叠结构</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2024/12/23/%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">驱动的备份与安装</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

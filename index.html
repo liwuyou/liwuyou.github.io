@@ -77,7 +77,7 @@
 <div class="widgets">
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/12/23/%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"><span class="title">驱动的备份与安装</span></a><a class="item title" href="/2024/11/06/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/"><span class="title">微机原理与接口技术</span></a><a class="item title" href="/2024/10/14/%E5%B8%B8%E8%A7%81%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE/"><span class="title">常见通讯协议</span></a><a class="item title" href="/2024/12/09/%E6%AD%A5%E8%BF%9B%E7%94%B5%E6%9C%BA/"><span class="title">步进电机</span></a><a class="item title" href="/2024/11/30/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-MOS/"><span class="title">硬件基础篇-MOS</span></a></div></widget>
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/12/26/%E7%A1%AC%E4%BB%B6%E8%BF%9B%E9%98%B6%E7%AF%87-%E5%B1%82%E5%8F%A0%E7%BB%93%E6%9E%84/"><span class="title">硬件进阶篇-层叠结构</span></a><a class="item title" href="/2024/12/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%A0%87%E8%AF%86%E7%AF%87/"><span class="title">硬件基础篇-标识篇</span></a><a class="item title" href="/2024/12/23/%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AE%89%E8%A3%85/"><span class="title">驱动的备份与安装</span></a><a class="item title" href="/2024/11/06/%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/"><span class="title">微机原理与接口技术</span></a><a class="item title" href="/2024/10/14/%E5%B8%B8%E8%A7%81%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE/"><span class="title">常见通讯协议</span></a></div></widget>
 
 
 </div>
@@ -98,7 +98,49 @@
   
 
 <div class="nav-wrap"><nav class="sub post cap"><a class="active" href="/">Recent</a><a href="/tags">Tags</a><a href="/archives">Archives</a></nav></div>
-  <div class="post-list post"><a class="post-card post " href="/2024/12/23/%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">
+  <div class="post-list post"><a class="post-card post " href="/2024/12/26/%E7%A1%AC%E4%BB%B6%E8%BF%9B%E9%98%B6%E7%AF%87-%E5%B1%82%E5%8F%A0%E7%BB%93%E6%9E%84/">
+<article class="md-text"><h2 class="post-title">硬件进阶篇-层叠结构</h2><div class="excerpt"><p>前言这是进阶篇的第一篇文章，设计到高速信号，现在基本都要求四层板及其以上了
+高速信号的重要方面
+
+叠层设计
+阻抗匹配
+信号协议
+模数分离
+
+模数分离由单点接地与多点接地引出，会在下一章进行具体学习
+信号完整性概念：信号在传输过程中能够保持原有形态，准确的到达目标设备。 
+
+
+分析方法
+
+建模和仿真，实际电路测试
+电磁仿真和电路仿真
+
+基础知识
+时域和频域的信号
+
+周期
+上升时间
+频谱
+带宽
+...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-12-25T18:19:25.000Z">2024-12-26</time></span></div></article>
+</a><a class="post-card post " href="/2024/12/25/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%A0%87%E8%AF%86%E7%AF%87/">
+<article class="md-text"><h2 class="post-title">硬件基础篇-标识篇</h2><div class="excerpt"><p>前言电路板上常常会有很多标识，那么这些标识都是什么意思呢？
+常见标识
+
+VCC
+GND
+VEE 
+负电压，出现在常用于运算放大器、电机驱动等电路中。
+
+
+VDD 
+表示供电电压，特别是对于 MOSFET 或 CMOS 电路来说，VDD 通常是指正电压源。VDD 也可以用于表示其它种类的正电源。
+
+
+VSS 
+VSS 常用于数字电路中，表示地（地电压）。在 CMOS 电路中，VSS 一般是地，...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-12-25T15:54:51.000Z">2024-12-25</time></span></div></article>
+</a><a class="post-card post " href="/2024/12/23/%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E5%AE%89%E8%A3%85/">
 <article class="md-text"><h2 class="post-title">驱动的备份与安装</h2><div class="excerpt"><p>驱动的导出在C盘新建文件夹
 
 
@@ -184,23 +226,6 @@ CH340的介绍CH340C和CH340B内置时钟
 <article class="md-text"><div class="post-cover"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/5b2d3b9977fe166b7c7da8b4008fa34.jpg"/></div><h2 class="post-title">arduino点亮36 RGB LEDs</h2><div class="excerpt"><p>
 
 1234567891011121314151617181920#include &lt;Adafruit_NeoPixel.h&gt;#define LED_PIN 4        // LED数据输入连接到Arduino引脚4#define LED_COUNT 36     // LED数量为36Adafruit_NeoPixel strip = Adafruit_NeoPixel(...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-11-05T17:39:41.000Z">2024-11-06</time></span></div></article>
-</a><a class="post-card post " href="/2024/11/04/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E5%B8%B8%E8%A7%81%E8%BF%90%E7%AE%97%E6%94%BE%E5%A4%A7%E5%99%A8/">
-<article class="md-text"><h2 class="post-title">硬件基础篇-常见运算放大器</h2><div class="excerpt"><p>前言由于设计一个霍尔线径检测模块，使用双49E霍尔，直接单片机模拟IO口读取，发现由于线径变化小，IO口读取的模拟值差值也小，分辨率低。需要加一个差分放大电路，于是决定复习一下运放的内容。主要关注的是运放的使用和仿真。运放的作用，对信号做加减，微积分，放大操作。
-运放基本结构
-
-
-当Up大于Un,输出主要有两个应用场景，比较器与放大器基本原理，虚短与虚断
-仿真测试
-
-疑问，为什么输出的不是5...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-11-04T10:11:56.000Z">2024-11-04</time></span></div></article>
-</a><a class="post-card post " href="/2024/10/23/%E5%9F%BA%E4%BA%8Esimplefoc-%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E6%93%8D%E4%BD%9C%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E8%BD%AC%E5%8A%A8/">
-<article class="md-text"><div class="post-cover"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/342ec8600bfaef1cbf0c2da9fa0fb28.jpg"/></div><h2 class="post-title">基于simplefoc 实现一个无刷电机操作另一个无刷电机转动</h2><div class="excerpt"><p>基于simplefoc 实现一个无刷电机操作另一个无刷电机转动
-
-基本框架
-
-
-主机代码
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-10-23T15:48:12.000Z">2024-10-23</time></span></div></article>
 </a></div>
   
   <div class='paginator-wrap dis-select'>
