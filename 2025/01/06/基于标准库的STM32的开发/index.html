@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>基于标准库的STM32的开发 - 无 忧</title>
+
+  
+    <meta name="description" content="前言总算成功进入STM32的学习之旅。   GPIO这里只介绍GPIO的数字输入与输出，常见有八个函数。引脚默认浮空输入模式   CPIOA,GPIOB,GPIOC，每个16个引脚  PA0-PA15…  有上拉和下拉输入电阻，推挽模式下，PMOS和NMOS都导通，开漏模式只有Nmos导通，开漏模式用于信号或者其他电压的上拉，关闭模式下，PNMOS都关闭   以下是 STM32 标准外设库中几个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于标准库的STM32的开发">
+<meta property="og:url" content="http://example.com/2025/01/06/%E5%9F%BA%E4%BA%8E%E6%A0%87%E5%87%86%E5%BA%93%E7%9A%84STM32%E7%9A%84%E5%BC%80%E5%8F%91/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="前言总算成功进入STM32的学习之旅。   GPIO这里只介绍GPIO的数字输入与输出，常见有八个函数。引脚默认浮空输入模式   CPIOA,GPIOB,GPIOC，每个16个引脚  PA0-PA15…  有上拉和下拉输入电阻，推挽模式下，PMOS和NMOS都导通，开漏模式只有Nmos导通，开漏模式用于信号或者其他电压的上拉，关闭模式下，PNMOS都关闭   以下是 STM32 标准外设库中几个">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107005621.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106220810.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106220942.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106221105.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106221947.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107120630.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107120919.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107121829.png">
+<meta property="article:published_time" content="2025-01-06T14:06:52.000Z">
+<meta property="article:modified_time" content="2025-01-08T17:53:44.328Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="STM32">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107005621.png">
+  
+  
+  
+  <meta name="keywords" content="STM32">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">基于标准库的STM32的开发</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPIO"><span class="toc-text">GPIO</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-GPIO-SetBits-GPIOx-GPIO-Pin-x"><span class="toc-text">1. GPIO_SetBits(GPIOx, GPIO_Pin_x)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-GPIO-ResetBits-GPIOx-GPIO-Pin-x"><span class="toc-text">2. GPIO_ResetBits(GPIOx, GPIO_Pin_x)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-GPIO-WriteBit-GPIOx-GPIO-Pin-x-BitAction-BitVal"><span class="toc-text">3. GPIO_WriteBit(GPIOx, GPIO_Pin_x, BitAction BitVal)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-GPIO-Write-GPIOx-uint16-t-PortVal"><span class="toc-text">4. GPIO_Write(GPIOx, uint16_t PortVal)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E5%8C%BA%E5%88%AB%EF%BC%9A"><span class="toc-text">总结区别：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE%EF%BC%9A"><span class="toc-text">使用建议：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD"><span class="toc-text">中断</span></a></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2025-01-06T14:06:52.000Z">2025-01-06</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2025-01-08T17:53:44.328Z">2025-01-09</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>基于标准库的STM32的开发</span></h1>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>总算成功进入STM32的学习之旅。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107005621.png"/></div></div>
+
+<h2 id="GPIO"><a href="#GPIO" class="headerlink" title="GPIO"></a>GPIO</h2><p>这里只介绍GPIO的数字输入与输出，常见有八个函数。引脚默认浮空输入模式</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106220810.png"/></div></div>
+
+<p>CPIOA,GPIOB,GPIOC，每个16个引脚</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106220942.png"/></div></div>
+<p>PA0-PA15…</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106221105.png"/></div></div>
+<p>有上拉和下拉输入电阻，<br>推挽模式下，PMOS和NMOS都导通，开漏模式只有Nmos导通，开漏模式用于信号或者其他电压的上拉，关闭模式下，PNMOS都关闭</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250106221947.png"/></div></div>
+
+<p>以下是 STM32 标准外设库中几个 GPIO 操作函数的区别和作用：</p>
+<hr>
+<h3 id="1-GPIO-SetBits-GPIOx-GPIO-Pin-x"><a href="#1-GPIO-SetBits-GPIOx-GPIO-Pin-x" class="headerlink" title="1. GPIO_SetBits(GPIOx, GPIO_Pin_x)"></a>1. <strong><code>GPIO_SetBits(GPIOx, GPIO_Pin_x)</code></strong></h3><ul>
+<li><strong>作用：</strong><ul>
+<li>将指定引脚的电平设置为 <strong>高电平</strong>。</li>
+</ul>
+</li>
+<li><strong>实现原理：</strong><ul>
+<li>通过设置寄存器中的某个位，将引脚输出逻辑高（通常对应 3.3V 或 1.8V，具体取决于芯片电源电压）。</li>
+</ul>
+</li>
+<li><strong>用法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIO_SetBits(GPIOC, GPIO_Pin_13); <span class="comment">// 将 PC13 引脚设置为高电平</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="2-GPIO-ResetBits-GPIOx-GPIO-Pin-x"><a href="#2-GPIO-ResetBits-GPIOx-GPIO-Pin-x" class="headerlink" title="2. GPIO_ResetBits(GPIOx, GPIO_Pin_x)"></a>2. <strong><code>GPIO_ResetBits(GPIOx, GPIO_Pin_x)</code></strong></h3><ul>
+<li><strong>作用：</strong><ul>
+<li>将指定引脚的电平设置为 <strong>低电平</strong>。</li>
+</ul>
+</li>
+<li><strong>实现原理：</strong><ul>
+<li>通过清除寄存器中的某个位，将引脚输出逻辑低（通常对应 0V）。</li>
+</ul>
+</li>
+<li><strong>用法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GPIO_ResetBits(GPIOC, GPIO_Pin_13); <span class="comment">// 将 PC13 引脚设置为低电平</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="3-GPIO-WriteBit-GPIOx-GPIO-Pin-x-BitAction-BitVal"><a href="#3-GPIO-WriteBit-GPIOx-GPIO-Pin-x-BitAction-BitVal" class="headerlink" title="3. GPIO_WriteBit(GPIOx, GPIO_Pin_x, BitAction BitVal)"></a>3. <strong><code>GPIO_WriteBit(GPIOx, GPIO_Pin_x, BitAction BitVal)</code></strong></h3><ul>
+<li><strong>作用：</strong><ul>
+<li>根据传入的参数 <code>BitVal</code>，设置引脚为高电平或低电平。</li>
+</ul>
+</li>
+<li><strong>参数：</strong><ul>
+<li><code>Bit_RESET</code>：设置引脚为 <strong>低电平</strong>。</li>
+<li><code>Bit_SET</code>：设置引脚为 <strong>高电平</strong>。</li>
+</ul>
+</li>
+<li><strong>实现原理：</strong><ul>
+<li>在底层实现中，会根据传入的 <code>BitVal</code> 选择性调用 <code>SetBits</code> 或 <code>ResetBits</code>。</li>
+</ul>
+</li>
+<li><strong>用法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPIO_WriteBit(GPIOC, GPIO_Pin_13, Bit_SET);   <span class="comment">// 设置 PC13 为高电平</span></span><br><span class="line">GPIO_WriteBit(GPIOC, GPIO_Pin_13, Bit_RESET); <span class="comment">// 设置 PC13 为低电平</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="4-GPIO-Write-GPIOx-uint16-t-PortVal"><a href="#4-GPIO-Write-GPIOx-uint16-t-PortVal" class="headerlink" title="4. GPIO_Write(GPIOx, uint16_t PortVal)"></a>4. <strong><code>GPIO_Write(GPIOx, uint16_t PortVal)</code></strong></h3><ul>
+<li><strong>作用：</strong><ul>
+<li>一次性设置 GPIO 端口（<code>GPIOx</code>）的所有引脚的电平状态。</li>
+<li>直接写入 <code>PortVal</code>，每一位对应一个引脚。</li>
+</ul>
+</li>
+<li><strong>参数：</strong><ul>
+<li><code>PortVal</code>：16 位数据，其中每一位控制对应引脚的电平。<ul>
+<li>例如，<code>PortVal = 0x0001</code> 设置 <code>Pin_0</code> 高电平，其他引脚低电平。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>用法：</strong><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GPIO_Write(GPIOC, <span class="number">0xFFFF</span>); <span class="comment">// 设置 GPIOC 的所有引脚为高电平</span></span><br><span class="line">GPIO_Write(GPIOC, <span class="number">0x0000</span>); <span class="comment">// 设置 GPIOC 的所有引脚为低电平</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<hr>
+<h3 id="总结区别："><a href="#总结区别：" class="headerlink" title="总结区别："></a>总结区别：</h3><table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>功能描述</th>
+<th>精细程度</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>GPIO_SetBits</code></td>
+<td>将某个或多个引脚设置为高电平</td>
+<td>控制单个或多个引脚</td>
+<td>简单设置某些引脚为高电平</td>
+</tr>
+<tr>
+<td><code>GPIO_ResetBits</code></td>
+<td>将某个或多个引脚设置为低电平</td>
+<td>控制单个或多个引脚</td>
+<td>简单设置某些引脚为低电平</td>
+</tr>
+<tr>
+<td><code>GPIO_WriteBit</code></td>
+<td>根据传入参数设置单个引脚为高或低电平</td>
+<td>控制单个引脚</td>
+<td>需要更精确地控制单个引脚的高低电平</td>
+</tr>
+<tr>
+<td><code>GPIO_Write</code></td>
+<td>设置整个 GPIO 端口的所有引脚电平</td>
+<td>控制整个端口</td>
+<td>同时操作整个端口的所有引脚，适合同时控制多个引脚的状态，如并行数据通信等</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="使用建议："><a href="#使用建议：" class="headerlink" title="使用建议："></a>使用建议：</h3><ul>
+<li>如果需要操作单个引脚，推荐使用 <code>GPIO_SetBits</code>、<code>GPIO_ResetBits</code> 或 <code>GPIO_WriteBit</code>。</li>
+<li>如果需要同时操作整个端口的引脚，可以使用 <code>GPIO_Write</code>。</li>
+<li><strong>注意：</strong><ul>
+<li>使用 <code>GPIO_Write</code> 时会覆盖整个端口的状态，因此需要慎用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_56399733/article/details/134979299">https://blog.csdn.net/m0_56399733/article/details/134979299</a></p>
+</blockquote>
+<p>抢占优先级与响应优先级<br>抢占优先级高的可以中断嵌套</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107120630.png"/></div></div>
+
+<p>外部中断</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107120919.png"/></div></div>
+<blockquote>
+<p>相同pin脚指PA0与PB1,PC1,都是1,PA0和PA1,作为中断就可以  </p>
+</blockquote>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250107121829.png"/></div></div>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2025/01/13/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E5%AE%9E%E8%B7%B5-USB2-0%E5%88%86%E7%BA%BF%E5%99%A8%E7%9A%84%E5%88%B6%E4%BD%9C/">硬件基础实践-USB2.0分线器的制作</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/01/06/%E4%BD%BF%E7%94%A8platformio%E5%BC%80%E5%8F%91stm32%E6%A0%87%E5%87%86%E5%BA%93/">使用platformio开发stm32标准库</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
