@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>电子基础科普篇-CPU架构 - 无 忧</title>
+
+  
+    <meta name="description" content="前言本篇针对一些关于CPU知识的扫盲包括但不限于以下内容  CPU的基本构造 CPU的架构 CPU的发展 CPU的性能评判  CPU的基本构造CPU（中央处理器）的基本单元可以分为多个核心模块，这些模块共同完成指令的获取、解码、执行和结果存储等功能。以下是 CPU 的主要基本单元及其功能：   1. 控制单元（Control Unit, CU） 功能： 负责指令的解码和控制信号的生成。 指挥其他单">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电子基础科普篇-CPU架构">
+<meta property="og:url" content="http://example.com/2025/01/15/%E7%94%B5%E5%AD%90%E5%9F%BA%E7%A1%80%E7%A7%91%E6%99%AE%E7%AF%87-CPU%E6%9E%B6%E6%9E%84/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="前言本篇针对一些关于CPU知识的扫盲包括但不限于以下内容  CPU的基本构造 CPU的架构 CPU的发展 CPU的性能评判  CPU的基本构造CPU（中央处理器）的基本单元可以分为多个核心模块，这些模块共同完成指令的获取、解码、执行和结果存储等功能。以下是 CPU 的主要基本单元及其功能：   1. 控制单元（Control Unit, CU） 功能： 负责指令的解码和控制信号的生成。 指挥其他单">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064442.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115071059.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115071114.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115063633.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064152.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064300.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115065255.png">
+<meta property="article:published_time" content="2025-01-14T22:12:37.000Z">
+<meta property="article:modified_time" content="2025-01-14T23:38:26.281Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="电子科普">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064442.png">
+  
+  
+  
+  <meta name="keywords" content="电子科普">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">电子基础科普篇-CPU架构</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%9E%84%E9%80%A0"><span class="toc-text">CPU的基本构造</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8E%A7%E5%88%B6%E5%8D%95%E5%85%83%EF%BC%88Control-Unit-CU%EF%BC%89"><span class="toc-text">1. 控制单元（Control Unit, CU）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BF%90%E7%AE%97%E5%8D%95%E5%85%83%EF%BC%88Arithmetic-Logic-Unit-ALU%EF%BC%89"><span class="toc-text">2. 运算单元（Arithmetic Logic Unit, ALU）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AF%84%E5%AD%98%E5%99%A8%EF%BC%88Registers%EF%BC%89"><span class="toc-text">3. 寄存器（Registers）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BC%93%E5%AD%98%EF%BC%88Cache%EF%BC%89"><span class="toc-text">4. 缓存（Cache）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%80%BB%E7%BA%BF%E6%8E%A5%E5%8F%A3%E5%8D%95%E5%85%83%EF%BC%88Bus-Interface-Unit-BIU%EF%BC%89"><span class="toc-text">5. 总线接口单元（Bus Interface Unit, BIU）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%A7%A3%E7%A0%81%E5%8D%95%E5%85%83%EF%BC%88Decoder%EF%BC%89"><span class="toc-text">6. 解码单元（Decoder）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8D%95%E5%85%83%EF%BC%88Pipeline-Unit%EF%BC%89"><span class="toc-text">7. 流水线单元（Pipeline Unit）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E5%8D%95%E5%85%83%EF%BC%88Floating-Point-Unit-FPU%EF%BC%89"><span class="toc-text">8. 浮点运算单元（Floating Point Unit, FPU）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B%E5%8D%95%E5%85%83%EF%BC%88Branch-Predictor%EF%BC%89"><span class="toc-text">9. 分支预测单元（Branch Predictor）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%8D%95%E5%85%83%EF%BC%88Memory-Management-Unit-MMU%EF%BC%89"><span class="toc-text">10. 内存管理单元（Memory Management Unit, MMU）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%97%B6%E9%92%9F%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%8D%95%E5%85%83"><span class="toc-text">11. 时钟与同步单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E5%A4%9A%E6%A0%B8%E4%B8%8E%E7%BA%BF%E7%A8%8B%E5%8D%95%E5%85%83"><span class="toc-text">12. 多核与线程单元</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%8C%87%E4%BB%A4%E9%9B%86%E6%9E%B6%E6%9E%84"><span class="toc-text">CPU的指令集架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#x86"><span class="toc-text">x86</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ARM"><span class="toc-text">ARM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC-V"><span class="toc-text">RISC-V</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LoongArch"><span class="toc-text">LoongArch</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-text">CPU的发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%AF%8D"><span class="toc-text">关键词</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E6%80%A7%E8%83%BD%E8%AF%84%E5%88%A4"><span class="toc-text">CPU的性能评判</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%BA%BF%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B%E5%88%86%E8%A3%82%E6%8A%80%E6%9C%AF"><span class="toc-text">超线程与线程分裂技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E6%9E%B6%E6%9E%84"><span class="toc-text">微架构</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2025-01-14T22:12:37.000Z">2025-01-15</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2025-01-14T23:38:26.281Z">2025-01-15</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>电子基础科普篇-CPU架构</span></h1>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇针对一些关于CPU知识的扫盲<br>包括但不限于以下内容</p>
+<ul>
+<li>CPU的基本构造</li>
+<li>CPU的架构</li>
+<li>CPU的发展</li>
+<li>CPU的性能评判</li>
+</ul>
+<h2 id="CPU的基本构造"><a href="#CPU的基本构造" class="headerlink" title="CPU的基本构造"></a>CPU的基本构造</h2><p>CPU（中央处理器）的基本单元可以分为多个核心模块，这些模块共同完成指令的获取、解码、执行和结果存储等功能。以下是 CPU 的主要基本单元及其功能：</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064442.png"/></div></div>
+<hr>
+<h3 id="1-控制单元（Control-Unit-CU）"><a href="#1-控制单元（Control-Unit-CU）" class="headerlink" title="1. 控制单元（Control Unit, CU）"></a><strong>1. 控制单元（Control Unit, CU）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>负责指令的解码和控制信号的生成。</li>
+<li>指挥其他单元协调工作，控制数据流和操作步骤。</li>
+</ul>
+</li>
+<li><strong>核心任务</strong>：<ul>
+<li>从内存中取出指令（Fetch）。</li>
+<li>解析指令含义（Decode）。</li>
+<li>向其他模块发送控制信号（例如启动运算或存储操作）。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-运算单元（Arithmetic-Logic-Unit-ALU）"><a href="#2-运算单元（Arithmetic-Logic-Unit-ALU）" class="headerlink" title="2. 运算单元（Arithmetic Logic Unit, ALU）"></a><strong>2. 运算单元（Arithmetic Logic Unit, ALU）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>执行算术运算（加法、减法等）。</li>
+<li>执行逻辑运算（与、或、非、异或等）。</li>
+<li>执行比较操作（如大于、小于、等于判断）。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：<ul>
+<li>处理 CPU 中大部分的数据计算任务。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="3-寄存器（Registers）"><a href="#3-寄存器（Registers）" class="headerlink" title="3. 寄存器（Registers）"></a><strong>3. 寄存器（Registers）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>提供 CPU 内部快速存储数据的位置，用于存放指令、操作数和中间结果。</li>
+</ul>
+</li>
+<li><strong>种类</strong>：<ul>
+<li><strong>通用寄存器</strong>：用于临时存储数据或中间计算结果（如 R1、R2）。</li>
+<li><strong>专用寄存器</strong>：<ul>
+<li><strong>程序计数器（PC, Program Counter）</strong>：存储下一条指令的地址。</li>
+<li><strong>指令寄存器（IR, Instruction Register）</strong>：存储当前正在执行的指令。</li>
+<li><strong>状态寄存器（Flags Register）</strong>：保存运算状态（如进位、溢出、零标志等）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="4-缓存（Cache）"><a href="#4-缓存（Cache）" class="headerlink" title="4. 缓存（Cache）"></a><strong>4. 缓存（Cache）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>临时存储频繁使用的数据和指令，减少从主存（RAM）取数的时间。</li>
+</ul>
+</li>
+<li><strong>层次</strong>：<ul>
+<li><strong>L1 Cache</strong>：直接嵌入到 CPU 核心中，速度最快，容量最小。</li>
+<li><strong>L2 Cache</strong>：容量比 L1 大，速度略慢。</li>
+<li><strong>L3 Cache</strong>：共享缓存，用于多核心 CPU。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-总线接口单元（Bus-Interface-Unit-BIU）"><a href="#5-总线接口单元（Bus-Interface-Unit-BIU）" class="headerlink" title="5. 总线接口单元（Bus Interface Unit, BIU）"></a><strong>5. 总线接口单元（Bus Interface Unit, BIU）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>负责 CPU 与外部设备（如内存、输入输出设备）之间的数据传输。</li>
+</ul>
+</li>
+<li><strong>总线种类</strong>：<ul>
+<li><strong>数据总线</strong>：传输数据。</li>
+<li><strong>地址总线</strong>：指定数据的存储位置。</li>
+<li><strong>控制总线</strong>：传输控制信号。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="6-解码单元（Decoder）"><a href="#6-解码单元（Decoder）" class="headerlink" title="6. 解码单元（Decoder）"></a><strong>6. 解码单元（Decoder）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>将取出的指令翻译为 CPU 能够识别的控制信号。</li>
+<li>配合控制单元，确定指令操作类型和目标操作数。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="7-流水线单元（Pipeline-Unit）"><a href="#7-流水线单元（Pipeline-Unit）" class="headerlink" title="7. 流水线单元（Pipeline Unit）"></a><strong>7. 流水线单元（Pipeline Unit）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>将指令的执行过程分成多个阶段（如取指、解码、执行、写回）。</li>
+<li>允许多条指令同时在不同阶段处理，提高执行效率。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="8-浮点运算单元（Floating-Point-Unit-FPU）"><a href="#8-浮点运算单元（Floating-Point-Unit-FPU）" class="headerlink" title="8. 浮点运算单元（Floating Point Unit, FPU）"></a><strong>8. 浮点运算单元（Floating Point Unit, FPU）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>专门负责浮点数运算（如小数的加减乘除）。</li>
+</ul>
+</li>
+<li><strong>重要性</strong>：<ul>
+<li>提高复杂计算（如科学计算、3D 渲染）的速度。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="9-分支预测单元（Branch-Predictor）"><a href="#9-分支预测单元（Branch-Predictor）" class="headerlink" title="9. 分支预测单元（Branch Predictor）"></a><strong>9. 分支预测单元（Branch Predictor）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>预测程序中的分支（如 if-else）走向。</li>
+</ul>
+</li>
+<li><strong>作用</strong>：<ul>
+<li>减少流水线中的停顿，提升 CPU 的执行效率。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="10-内存管理单元（Memory-Management-Unit-MMU）"><a href="#10-内存管理单元（Memory-Management-Unit-MMU）" class="headerlink" title="10. 内存管理单元（Memory Management Unit, MMU）"></a><strong>10. 内存管理单元（Memory Management Unit, MMU）</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>管理 CPU 和内存之间的地址映射。</li>
+<li>提供虚拟内存支持，实现地址转换和访问权限控制。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="11-时钟与同步单元"><a href="#11-时钟与同步单元" class="headerlink" title="11. 时钟与同步单元"></a><strong>11. 时钟与同步单元</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>提供系统时钟信号，控制各个模块的同步操作。</li>
+</ul>
+</li>
+<li><strong>时钟频率</strong>：<ul>
+<li>直接影响 CPU 的运行速度。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="12-多核与线程单元"><a href="#12-多核与线程单元" class="headerlink" title="12. 多核与线程单元"></a><strong>12. 多核与线程单元</strong></h3><ul>
+<li><strong>功能</strong>：<ul>
+<li>每个核心可以独立运行任务，多核 CPU 提供更强大的并行计算能力。</li>
+<li>支持超线程（Hyper-Threading）技术，虚拟出更多的逻辑处理单元。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>CPU 的各个基本单元协同工作，形成一个高效的数据处理和指令执行系统。根据需求的不同，现代 CPU 不仅包含传统的运算和控制模块，还加入了更多专用单元（如 GPU 集成单元、AI 加速单元等）以适应更复杂的应用场景。</p>
+<h2 id="CPU的指令集架构"><a href="#CPU的指令集架构" class="headerlink" title="CPU的指令集架构"></a>CPU的指令集架构</h2><p>常见架构：   </p>
+<h3 id="x86"><a href="#x86" class="headerlink" title="x86"></a>x86</h3><p>厂商：Intel、AMD<br>特点：CISC（复杂指令集计算机）架构，性能强大，主要用于个人电脑、服务器。<br>应用场景：桌面电脑、服务器、大型计算任务。  </p>
+<h3 id="ARM"><a href="#ARM" class="headerlink" title="ARM"></a>ARM</h3><p>厂商：ARM Holdings（架构设计），Qualcomm、Apple 等厂商基于其设计芯片。<br>特点：RISC（精简指令集计算机）架构，低功耗，高效率，广泛用于移动设备。<br>应用场景：智能手机、平板电脑、嵌入式设备、物联网。   </p>
+<h3 id="RISC-V"><a href="#RISC-V" class="headerlink" title="RISC-V"></a>RISC-V</h3><p>特点：开源 RISC 架构，可定制，灵活性高，支持硬件和软件开源开发。<br>应用场景：物联网、嵌入式设备、教育和研究领域。</p>
+<h3 id="LoongArch"><a href="#LoongArch" class="headerlink" title="LoongArch"></a>LoongArch</h3><p>龙芯CPU，国产CPU,不太常见（消费级）</p>
+<h2 id="CPU的发展"><a href="#CPU的发展" class="headerlink" title="CPU的发展"></a>CPU的发展</h2><p>PC机(x86)的CPU制造厂家,Inter and AMD</p>
+<blockquote>
+<p>【想知道作为电子数字世界大脑的CPU是如何发展至今的吗？【CPU发展史｜仿生之旅】】 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ME421A78n/?share_source=copy_web&vd_source=59d9734fc97a6b9510465651bf85b98c">https://www.bilibili.com/video/BV1ME421A78n/?share_source=copy_web&amp;vd_source=59d9734fc97a6b9510465651bf85b98c</a></p>
+</blockquote>
+<h3 id="关键词"><a href="#关键词" class="headerlink" title="关键词"></a>关键词</h3><p>卡片  纸带<br>图灵 图灵机 图灵完备 指令<br>ABC机 类指令    </p>
+<blockquote>
+<p>通常是指计算机架构中与特定类型的指令相关的指令集。类指令可以被分为多个类别，每个类别包含具有相似功能或目的的指令。它们通常与 CPU 指令集架构（ISA）有关，并描述如何在处理器中执行某些操作。</p>
+</blockquote>
+<p>IBM公司<br>战争 真空电子管 军方需求<br>冯诺依曼 五大部件 哈佛存储架构<br>其他架构   </p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115071059.png"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115071114.png"/></div></div>
+
+<p>集成电路   光刻技术<br>八大逆徒 美国仙童半导体<br>薄膜技术 光蚀刻技术<br>MOS<br>摩尔定律<br>inter … 硅谷<br>沃森  多线程  IBM  指令集架构<br>4001ROM 4002RAM 4003移位寄存器 4004逻辑运算芯片（cpu）<br>8080 8086（x86架构）<br>精简指令集<br>arm(单片机)<br>AMD 32-&gt;64<br>2010 RISC-V<br>1985 赛灵思XILINX FPGA</p>
+<h2 id="CPU的性能评判"><a href="#CPU的性能评判" class="headerlink" title="CPU的性能评判"></a>CPU的性能评判</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115063633.png"/></div></div>
+
+<h3 id="超线程与线程分裂技术"><a href="#超线程与线程分裂技术" class="headerlink" title="超线程与线程分裂技术"></a>超线程与线程分裂技术</h3><p>inter</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064152.png"/></div></div>
+<p>AMD</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115064300.png"/></div></div>
+
+<h3 id="微架构"><a href="#微架构" class="headerlink" title="微架构"></a>微架构</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115065255.png"/></div></div>
+<blockquote>
+<p>IPC</p>
+</blockquote>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/01/14/python%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">python的基本语法</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
