@@ -23,17 +23,17 @@
   <title>硬件基础篇-pcb规则 - 无 忧</title>
 
   
-    <meta name="description" content="前言规则只是在有前辈总结，但很多自己没有验证或缺乏验证时使用的一种经验，科学吗？不知道。随着PCB工艺的发展，一些规则是否仍然需要遵从，是否适用，依然是个问题，但规则能够帮助初学者提供一种相对正确的规范，仍然具备其价值。 关于晶振包地的处理规则     晶振靠近芯片； 晶振电路包地； 起振电容（负载电容）靠近晶振； 晶振下面第二层挖空； 晶振不能靠近板边； 晶振下面所有层不能布线。   是第二层掏">
+    <meta name="description" content="前言规则只是在有前辈总结，但很多自己没有验证或缺乏验证时使用的一种经验，科学吗？不知道。随着PCB工艺的发展，一些规则是否仍然需要遵从，是否适用，依然是个问题，但规则能够帮助初学者提供一种相对正确的规范，仍然具备其价值。 将包括以下部分，尽可能的做道图文并茂  流程处理 板框处理 元件布局处理 走线处理由于是内容互有穿插，就不二级标题按此划分  关于晶振包地的处理规则     晶振靠近芯片； 晶振">
 <meta property="og:type" content="article">
 <meta property="og:title" content="硬件基础篇-pcb规则">
 <meta property="og:url" content="http://example.com/2025/01/03/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-pcb%E8%A7%84%E5%88%99/index.html">
 <meta property="og:site_name" content="无 忧">
-<meta property="og:description" content="前言规则只是在有前辈总结，但很多自己没有验证或缺乏验证时使用的一种经验，科学吗？不知道。随着PCB工艺的发展，一些规则是否仍然需要遵从，是否适用，依然是个问题，但规则能够帮助初学者提供一种相对正确的规范，仍然具备其价值。 关于晶振包地的处理规则     晶振靠近芯片； 晶振电路包地； 起振电容（负载电容）靠近晶振； 晶振下面第二层挖空； 晶振不能靠近板边； 晶振下面所有层不能布线。   是第二层掏">
+<meta property="og:description" content="前言规则只是在有前辈总结，但很多自己没有验证或缺乏验证时使用的一种经验，科学吗？不知道。随着PCB工艺的发展，一些规则是否仍然需要遵从，是否适用，依然是个问题，但规则能够帮助初学者提供一种相对正确的规范，仍然具备其价值。 将包括以下部分，尽可能的做道图文并茂  流程处理 板框处理 元件布局处理 走线处理由于是内容互有穿插，就不二级标题按此划分  关于晶振包地的处理规则     晶振靠近芯片； 晶振">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250103172342.png">
 <meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250103172353.png">
 <meta property="article:published_time" content="2025-01-03T09:12:12.000Z">
-<meta property="article:modified_time" content="2025-01-05T13:23:38.888Z">
+<meta property="article:modified_time" content="2025-01-16T17:21:19.281Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="硬件基础">
 <meta name="twitter:card" content="summary">
@@ -105,12 +105,19 @@
 <div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
     <span>Posted on&nbsp;<time datetime="2025-01-03T09:12:12.000Z">2025-01-03</time></span>
     
-    <span>Updated on&nbsp;<time datetime="2025-01-05T13:23:38.888Z">2025-01-05</time></span>
+    <span>Updated on&nbsp;<time datetime="2025-01-16T17:21:19.281Z">2025-01-17</time></span>
     </div></div></div>
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>硬件基础篇-pcb规则</span></h1>
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>规则只是在有前辈总结，但很多自己没有验证或缺乏验证时使用的一种经验，科学吗？不知道。随着PCB工艺的发展，一些规则是否仍然需要遵从，是否适用，依然是个问题，但规则能够帮助初学者提供一种相对正确的规范，仍然具备其价值。</p>
+<p>将包括以下部分，尽可能的做道图文并茂</p>
+<ul>
+<li>流程处理</li>
+<li>板框处理</li>
+<li>元件布局处理</li>
+<li>走线处理<br>由于是内容互有穿插，就不二级标题按此划分</li>
+</ul>
 <h2 id="关于晶振包地的处理规则"><a href="#关于晶振包地的处理规则" class="headerlink" title="关于晶振包地的处理规则"></a>关于晶振包地的处理规则</h2><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250103172342.png"/></div></div>
 
 <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250103172353.png"/></div></div>
