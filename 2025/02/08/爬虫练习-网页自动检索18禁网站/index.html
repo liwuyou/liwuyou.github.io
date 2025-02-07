@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>爬虫练习-网页自动检索18禁网站 - 无 忧</title>
+
+  
+    <meta name="description" content="基本思路：    通过查询网(“https:&#x2F;&#x2F;site.ip138.com&#x2F;&quot;)获取大量域名，域名可能会有需要的网站，爬虫伪装访问网站，获取网页源码，通过字符匹配，判断是否包含18禁内容 注意，目前代码能检索的出来的，说明网站基本未做任何防爬措施，判断安全的并不一定就不是18禁网站（也许这种性质的网站希望爬虫爬到） 文件结构   代码，先运行1_get.py，再2_on.py,检索到的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="爬虫练习-网页自动检索18禁网站">
+<meta property="og:url" content="http://example.com/2025/02/08/%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0-%E7%BD%91%E9%A1%B5%E8%87%AA%E5%8A%A8%E6%A3%80%E7%B4%A218%E7%A6%81%E7%BD%91%E7%AB%99/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="基本思路：    通过查询网(“https:&#x2F;&#x2F;site.ip138.com&#x2F;&quot;)获取大量域名，域名可能会有需要的网站，爬虫伪装访问网站，获取网页源码，通过字符匹配，判断是否包含18禁内容 注意，目前代码能检索的出来的，说明网站基本未做任何防爬措施，判断安全的并不一定就不是18禁网站（也许这种性质的网站希望爬虫爬到） 文件结构   代码，先运行1_get.py，再2_on.py,检索到的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250208011346.png">
+<meta property="article:published_time" content="2025-02-07T17:09:13.000Z">
+<meta property="article:modified_time" content="2025-02-07T17:21:17.087Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="爬虫练习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250208011346.png">
+  
+  
+  
+  <meta name="keywords" content="爬虫练习">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2025/02/08/%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0-%E7%BD%91%E9%A1%B5%E8%87%AA%E5%8A%A8%E6%A3%80%E7%B4%A218%E7%A6%81%E7%BD%91%E7%AB%99/"><span class="title">爬虫练习-网页自动检索18禁网站</span></a><a class="item title" href="/2025/02/03/HTML%E7%9A%84%E5%AD%A6%E4%B9%A0/"><span class="title">HTML的学习</span></a><a class="item title" href="/2025/01/20/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%98%BE%E7%A4%BA%E5%B1%8F%E5%B9%95/"><span class="title">硬件基础篇-显示屏幕</span></a><a class="item title" href="/2025/01/20/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%9F%BA%E7%A1%80-%E5%9B%BA%E6%80%81%E9%80%89%E8%B4%AD/"><span class="title">电脑知识基础-固态选购</span></a><a class="item title" href="/2024/10/20/USB-to-can%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%B8%A9%E5%9D%91/"><span class="title">USB to can的学习与踩坑</span></a></div></widget>
+
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2025-02-07T17:09:13.000Z">2025-02-08</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2025-02-07T17:21:17.087Z">2025-02-08</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>爬虫练习-网页自动检索18禁网站</span></h1>
+<p>基本思路：   </p>
+<p>通过查询网(“<a target="_blank" rel="noopener" href="https://site.ip138.com/%22)%E8%8E%B7%E5%8F%96%E5%A4%A7%E9%87%8F%E5%9F%9F%E5%90%8D%EF%BC%8C%E5%9F%9F%E5%90%8D%E5%8F%AF%E8%83%BD%E4%BC%9A%E6%9C%89%E9%9C%80%E8%A6%81%E7%9A%84%E7%BD%91%E7%AB%99%EF%BC%8C%E7%88%AC%E8%99%AB%E4%BC%AA%E8%A3%85%E8%AE%BF%E9%97%AE%E7%BD%91%E7%AB%99%EF%BC%8C%E8%8E%B7%E5%8F%96%E7%BD%91%E9%A1%B5%E6%BA%90%E7%A0%81%EF%BC%8C%E9%80%9A%E8%BF%87%E5%AD%97%E7%AC%A6%E5%8C%B9%E9%85%8D%EF%BC%8C%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%8C%85%E5%90%AB18%E7%A6%81%E5%86%85%E5%AE%B9">https://site.ip138.com/&quot;)获取大量域名，域名可能会有需要的网站，爬虫伪装访问网站，获取网页源码，通过字符匹配，判断是否包含18禁内容</a></p>
+<p>注意，目前代码能检索的出来的，说明网站基本未做任何防爬措施，判断安全的并不一定就不是18禁网站（也许这种性质的网站希望爬虫爬到）</p>
+<p>文件结构</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250208011346.png"/></div></div>
+
+<p>代码，先运行1_get.py，再2_on.py,检索到的文件会保存到sex.py文件中   </p>
+<p>1_get.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fetch_domains</span>(<span class="params">url, request_count=<span class="number">10</span>, interval=<span class="number">5</span>, file_path=<span class="string">&quot;domain_results.txt&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    从指定 URL 获取最新域名信息并追加保存到文件。</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    :param url: 目标网站 URL</span></span><br><span class="line"><span class="string">    :param request_count: 请求次数，None 表示无限循环</span></span><br><span class="line"><span class="string">    :param interval: 请求间隔（秒）</span></span><br><span class="line"><span class="string">    :param file_pathe: 结果保存的文件名</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> request_count <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> count &lt; request_count:</span><br><span class="line">        response = requests.get(url, headers=headers)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> response.status_code != <span class="number">200</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;请求失败，状态码: <span class="subst">&#123;response.status_code&#125;</span>&quot;</span>)</span><br><span class="line">            time.sleep(interval)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        </span><br><span class="line">        soup = BeautifulSoup(response.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">        domain_list = [item.text <span class="keyword">for</span> item <span class="keyword">in</span> soup.select(<span class="string">&#x27;.result1 .group ul:nth-of-type(1) li a&#x27;</span>)]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;a&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> domain <span class="keyword">in</span> domain_list:</span><br><span class="line">                f.write(domain + <span class="string">&quot;\n&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;最新查询结果已追加到 <span class="subst">&#123;file_path&#125;</span>&quot;</span>)</span><br><span class="line">        count += <span class="number">1</span></span><br><span class="line">        time.sleep(interval)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">remove_duplicates</span>(<span class="params">file_path=<span class="string">&quot;domain_results.txt&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    删除文件中的重复域名，并保持原有顺序。</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    :param file_path: 要去重的文件路径</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            lines = f.readlines()</span><br><span class="line">        </span><br><span class="line">        unique_domains = <span class="built_in">list</span>(<span class="built_in">dict</span>.fromkeys(line.strip() <span class="keyword">for</span> line <span class="keyword">in</span> lines))  <span class="comment"># 保持顺序去重</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> domain <span class="keyword">in</span> unique_domains:</span><br><span class="line">                f.write(domain + <span class="string">&quot;\n&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;重复域名已删除，更新后的数据已保存到 <span class="subst">&#123;file_path&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;文件 <span class="subst">&#123;file_path&#125;</span> 不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">remove_duplicates_2</span>(<span class="params">file_path=<span class="string">&quot;domain_results.txt&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    删除文件中的重复域名，并保持原有顺序，同时移除无法访问的域名。</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    :param file_path: 要去重和筛选的文件路径</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) &quot;</span></span><br><span class="line">                      <span class="string">&quot;AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 &quot;</span></span><br><span class="line">                      <span class="string">&quot;Mobile/15E148 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            lines = f.readlines()</span><br><span class="line">        </span><br><span class="line">        unique_domains = <span class="built_in">list</span>(<span class="built_in">dict</span>.fromkeys(line.strip() <span class="keyword">for</span> line <span class="keyword">in</span> lines))  <span class="comment"># 保持顺序去重</span></span><br><span class="line">        valid_domains = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> domain <span class="keyword">in</span> unique_domains:</span><br><span class="line">            url = <span class="string">f&quot;http://<span class="subst">&#123;domain&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">try</span>:</span><br><span class="line">                response = requests.get(url, headers=headers, timeout=<span class="number">10</span>)</span><br><span class="line">                <span class="keyword">if</span> response.status_code == <span class="number">200</span>:</span><br><span class="line">                    valid_domains.append(domain)</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f&quot;删除无法访问的域名: <span class="subst">&#123;domain&#125;</span>, 状态码: <span class="subst">&#123;response.status_code&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">except</span> requests.RequestException:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;删除无法访问的域名: <span class="subst">&#123;domain&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            <span class="keyword">for</span> domain <span class="keyword">in</span> valid_domains:</span><br><span class="line">                f.write(domain + <span class="string">&quot;\n&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;重复域名已删除，无法访问的域名已移除，更新后的数据已保存到 <span class="subst">&#123;file_path&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;文件 <span class="subst">&#123;file_path&#125;</span> 不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 示例调用</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    fetch_domains(<span class="string">&quot;https://site.ip138.com/&quot;</span>, request_count=<span class="number">10</span>, interval=<span class="number">5</span>,file_path=<span class="string">&quot;data/test.txt&quot;</span>)</span><br><span class="line">    remove_duplicates_2(file_path=<span class="string">&quot;data/test.txt&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>代码，<br>2_on.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_adult_content</span>(<span class="params">url</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    伪装成手机设备访问指定网站，并判断是否包含成人内容。</span></span><br><span class="line"><span class="string">    :param url: 目标网站 URL</span></span><br><span class="line"><span class="string">    :return: 是否为成人内容（True/False）</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X) &quot;</span></span><br><span class="line">                      <span class="string">&quot;AppleWebKit/537.36 (KHTML, like Gecko) Version/14.0 &quot;</span></span><br><span class="line">                      <span class="string">&quot;Mobile/15E148 Safari/537.36&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        response = requests.get(url, headers=headers, timeout=<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">if</span> response.status_code != <span class="number">200</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;访问失败: <span class="subst">&#123;url&#125;</span>, 状态码: <span class="subst">&#123;response.status_code&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        response.encoding = response.apparent_encoding</span><br><span class="line"></span><br><span class="line">        soup = BeautifulSoup(response.text, <span class="string">&quot;html.parser&quot;</span>)</span><br><span class="line">        text_content = soup.get_text().lower()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># with open(&quot;data/example.txt&quot;, &quot;a&quot;, encoding=&quot;utf-8&quot;) as f:</span></span><br><span class="line">        <span class="comment">#     f.write(text_content)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 关键词列表（可以扩展）</span></span><br><span class="line">        adult_keywords = [<span class="string">&quot;porn&quot;</span>, <span class="string">&quot;sex&quot;</span>, <span class="string">&quot;xxx&quot;</span>, <span class="string">&quot;adult&quot;</span>, <span class="string">&quot;erotic&quot;</span>, <span class="string">&quot;nude&quot;</span>, <span class="string">&quot;hentai&quot;</span>, <span class="string">&quot;18+&quot;</span>, <span class="string">&quot;爱情&quot;</span>, <span class="string">&quot;女神&quot;</span>,<span class="string">&quot;线路&quot;</span>,<span class="string">&quot;澳门&quot;</span>,<span class="string">&quot;vip&quot;</span>,<span class="string">&quot;撸&quot;</span>, <span class="string">&quot;麻豆&quot;</span>,<span class="string">&quot;天美&quot;</span>,<span class="string">&quot;精东&quot;</span>,<span class="string">&quot;糖心&quot;</span>,<span class="string">&quot;有码&quot;</span>,<span class="string">&quot;无码&quot;</span>]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> keyword <span class="keyword">in</span> adult_keywords:</span><br><span class="line">            <span class="keyword">if</span> keyword <span class="keyword">in</span> text_content:</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">except</span> requests.RequestException <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;请求异常: <span class="subst">&#123;url&#125;</span>, 错误: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check_domains</span>(<span class="params">file_path=<span class="string">&quot;domain_results.txt&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    读取 domain_results.txt，检测其中的域名是否包含成人内容。</span></span><br><span class="line"><span class="string">    :param file_path: 域名列表文件</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            domains = [line.strip() <span class="keyword">for</span> line <span class="keyword">in</span> f <span class="keyword">if</span> line.strip()]</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> domain <span class="keyword">in</span> domains:</span><br><span class="line">            full_url = <span class="string">f&quot;http://<span class="subst">&#123;domain&#125;</span>&quot;</span></span><br><span class="line">            <span class="keyword">if</span> is_adult_content(full_url):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;⚠️ 检测到成人内容: <span class="subst">&#123;domain&#125;</span>&quot;</span>)</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;data/sex.txt&quot;</span>, <span class="string">&quot;a&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(full_url+ <span class="string">&quot;\n&quot;</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;✅ 安全: <span class="subst">&#123;domain&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">except</span> FileNotFoundError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;文件 <span class="subst">&#123;file_path&#125;</span> 不存在。&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行检测</span></span><br><span class="line">test_file = <span class="string">&quot;data/test.txt&quot;</span></span><br><span class="line">check_domains(test_file)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/02/03/HTML%E7%9A%84%E5%AD%A6%E4%B9%A0/">HTML的学习</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

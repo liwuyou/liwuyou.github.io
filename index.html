@@ -77,7 +77,7 @@
 <div class="widgets">
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
 
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2024/09/05/Arduino-uno-%E5%BC%80%E5%8F%91/"><span class="title">Arduino uno 开发</span></a><a class="item title" href="/2024/08/06/%E5%AE%A4%E5%A4%96%E7%BB%84%E4%BA%8C%E4%BB%A3%E8%BD%A6%E4%B8%8A%E6%89%8B%E8%AE%B0%E5%BD%95/"><span class="title">室外组二代车上手记录</span></a><a class="item title" href="/2025/01/03/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-pcb%E8%A7%84%E5%88%99/"><span class="title">硬件基础篇-pcb规则</span></a><a class="item title" href="/2025/01/15/%E7%94%B5%E5%AD%90%E5%9F%BA%E7%A1%80%E7%A7%91%E6%99%AE%E7%AF%87-CPU%E6%9E%B6%E6%9E%84/"><span class="title">电子基础科普篇-CPU架构</span></a><a class="item title" href="/2025/01/14/python%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"><span class="title">python的基本语法</span></a></div></widget>
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">Recent Update</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2025/02/08/%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0-%E7%BD%91%E9%A1%B5%E8%87%AA%E5%8A%A8%E6%A3%80%E7%B4%A218%E7%A6%81%E7%BD%91%E7%AB%99/"><span class="title">爬虫练习-网页自动检索18禁网站</span></a><a class="item title" href="/2025/02/03/HTML%E7%9A%84%E5%AD%A6%E4%B9%A0/"><span class="title">HTML的学习</span></a><a class="item title" href="/2025/01/20/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%98%BE%E7%A4%BA%E5%B1%8F%E5%B9%95/"><span class="title">硬件基础篇-显示屏幕</span></a><a class="item title" href="/2025/01/20/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%9F%BA%E7%A1%80-%E5%9B%BA%E6%80%81%E9%80%89%E8%B4%AD/"><span class="title">电脑知识基础-固态选购</span></a><a class="item title" href="/2024/10/20/USB-to-can%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B8%8E%E8%B8%A9%E5%9D%91/"><span class="title">USB to can的学习与踩坑</span></a></div></widget>
 
 
 </div>
@@ -98,7 +98,52 @@
   
 
 <div class="nav-wrap"><nav class="sub post cap"><a class="active" href="/">Recent</a><a href="/tags">Tags</a><a href="/archives">Archives</a></nav></div>
-  <div class="post-list post"><a class="post-card post " href="/2025/01/15/%E7%94%B5%E5%AD%90%E5%9F%BA%E7%A1%80%E7%A7%91%E6%99%AE%E7%AF%87-CPU%E6%9E%B6%E6%9E%84/">
+  <div class="post-list post"><a class="post-card post " href="/2025/02/08/%E7%88%AC%E8%99%AB%E7%BB%83%E4%B9%A0-%E7%BD%91%E9%A1%B5%E8%87%AA%E5%8A%A8%E6%A3%80%E7%B4%A218%E7%A6%81%E7%BD%91%E7%AB%99/">
+<article class="md-text"><h2 class="post-title">爬虫练习-网页自动检索18禁网站</h2><div class="excerpt"><p>基本思路：   
+通过查询网(“https://site.ip138.com/&quot;)获取大量域名，域名可能会有需要的网站，爬虫伪装访问网站，获取网页源码，通过字符匹配，判断是否包含18禁内容
+注意，目前代码能检索的出来的，说明网站基本未做任何防爬措施，判断安全的并不一定就不是18禁网站（也许这种性质的网站希望爬虫爬到）
+文件结构
+
+
+代码，先运行1_get.py，再2_on.py,检...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-02-07T17:09:13.000Z">2025-02-08</time></span></div></article>
+</a><a class="post-card post " href="/2025/02/03/HTML%E7%9A%84%E5%AD%A6%E4%B9%A0/">
+<article class="md-text"><h2 class="post-title">HTML的学习</h2><div class="excerpt"><p>
+https://www.runoob.com/html/html-tutorial.html
+
+HTML的标签什么是 HTML?HTML 是用来描述网页的一种语言。
+123456HTML 指的是超文本标记语言: HyperText Markup LanguageHTML 不是一种编程语言，而是一种标记语言标记语言是一套标记标签 (markup tag)HTML 使用标记标签来描述网页HTM...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-02-03T15:25:29.000Z">2025-02-03</time></span></div></article>
+</a><a class="post-card post " href="/2025/01/20/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E6%98%BE%E7%A4%BA%E5%B1%8F%E5%B9%95/">
+<article class="md-text"><div class="post-cover"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250120060044.png"/></div><h2 class="post-title">硬件基础篇-显示屏幕</h2><div class="excerpt"><p>前言常见的什么数码管，4p小屏幕就略过了，重点关注不知道的知识
+
+https://lceda001.feishu.cn/wiki/NiQKwDgsuiwLiHkCtFtcZnoFnFg 立创的教程https://blog.csdn.net/qq_28877125/article/details/123076973 屏幕40pin
+
+分类
+显示模组分类和特点按显示技术分类
+
+
+技术
+分类
+特点...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-01-19T20:57:06.000Z">2025-01-20</time></span></div></article>
+</a><a class="post-card post " href="/2025/01/20/%E7%94%B5%E8%84%91%E7%9F%A5%E8%AF%86%E5%9F%BA%E7%A1%80-%E5%9B%BA%E6%80%81%E9%80%89%E8%B4%AD/">
+<article class="md-text"><h2 class="post-title">电脑知识基础-固态选购</h2><div class="excerpt"><p>前言由于运行虚拟机的电脑磁盘不够大了，需要增加固态。soc的SDK大小较大。由于固态太贵了，决定小黄鱼入手，M2为主
+固态
+NVME协议的M.2固态
+SATA协议的SSD2.5寸固态
+
+选购参数
+颗粒类型与颗粒等级
+主控
+独立缓存
+
+颗粒类型（SLC,MLC,TLC,QLC）
+
+
+ 
+
+
+M2固态规格22110，2280（多），2260，2242
+</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-01-19T17:14:31.000Z">2025-01-20</time></span></div></article>
+</a><a class="post-card post " href="/2025/01/15/%E7%94%B5%E5%AD%90%E5%9F%BA%E7%A1%80%E7%A7%91%E6%99%AE%E7%AF%87-CPU%E6%9E%B6%E6%9E%84/">
 <article class="md-text"><div class="post-cover"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250115061334.png"/></div><h2 class="post-title">电子基础科普篇-CPU架构</h2><div class="excerpt"><p>前言本篇针对一些关于CPU知识的扫盲包括但不限于以下内容
 
 CPU的基本构造
@@ -182,62 +227,6 @@ name为工程名称，board为板子类型，framework为架构，标准库架�
 下图...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-01-06T12:25:27.000Z">2025-01-06</time></span></div></article>
 </a><a class="post-card post " href="/2025/01/03/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-%E5%85%B3%E4%BA%8EPCB%E7%9A%84%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B/">
 <article class="md-text"><h2 class="post-title">硬件基础篇-关于PCB的功能测试流程</h2><div class="excerpt"><p></p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-01-03T09:39:25.000Z">2025-01-03</time></span></div></article>
-</a><a class="post-card post " href="/2025/01/03/%E7%A1%AC%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%AF%87-pcb%E8%A7%84%E5%88%99/">
-<article class="md-text"><h2 class="post-title">硬件基础篇-pcb规则</h2><div class="excerpt"><p>前言规则只是在有前辈总结，但很多自己没有验证或缺乏验证时使用的一种经验，科学吗？不知道。随着PCB工艺的发展，一些规则是否仍然需要遵从，是否适用，依然是个问题，但规则能够帮助初学者提供一种相对正确的规范，仍然具备其价值。
-将包括以下部分，尽可能的做道图文并茂
-
-流程处理
-板框处理
-元件布局处理
-走线处理由于是内容互有穿插，就不二级标题按此划分
-
-关于晶振包地的处理规则
-
-
-
-
-晶振靠近芯片；...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-01-03T09:12:12.000Z">2025-01-03</time></span></div></article>
-</a><a class="post-card post " href="/2025/01/02/%E7%A1%AC%E4%BB%B6%E8%BF%9B%E9%98%B6%E7%AF%87-%E9%98%BB%E6%8A%97%E5%8C%B9%E9%85%8D/">
-<article class="md-text"><h2 class="post-title">硬件进阶篇-阻抗匹配</h2><div class="excerpt"><p>前言阻抗匹配是高速信号的基础，但很显然目前的我对此还是一知半解，所以就单开一章来谈一谈这个问题
-什么是阻抗匹配
-
-阻抗(Electrical Impedance)是电路中电阻、电感、电容对交流电的阻碍作用的统称。阻抗常用Z表示，单位是欧姆 Ω，对于一个具体电路，阻抗不是不变的，其数值由交流电的频率、电阻R、电感L、电容C相互作用来决用，随着频率变化而变化。
-
-
-阻抗匹配(Impedance ...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2025-01-01T17:05:53.000Z">2025-01-02</time></span></div></article>
-</a><a class="post-card post " href="/2024/12/31/%E7%A1%AC%E4%BB%B6%E8%BF%9B%E9%98%B6%E7%AF%87-%E6%A8%A1%E6%95%B0%E5%88%86%E7%A6%BB/">
-<article class="md-text"><h2 class="post-title">硬件进阶篇-模数分离</h2><div class="excerpt"><p>模数分离由单点接地与多点接地引出，会在这一章进行具体学习信号线跨接如何通过磁珠连接还需要案例
-
-【模数混合电路的PCB设计分割】 https://www.bilibili.com/video/BV1b4411h7Mu/?share_source=copy_web&amp;vd_source=bae7f44ac8b5e1669726b9f5e7d214b6
-
-数字与模拟信号
-模拟信号抗干扰能力...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-12-31T09:52:14.000Z">2024-12-31</time></span></div></article>
-</a><a class="post-card post " href="/2024/12/26/%E7%A1%AC%E4%BB%B6%E8%BF%9B%E9%98%B6%E7%AF%87-%E5%B1%82%E5%8F%A0%E7%BB%93%E6%9E%84/">
-<article class="md-text"><div class="post-cover"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20241226053039.png"/></div><h2 class="post-title">硬件进阶篇-层叠结构</h2><div class="excerpt"><p>前言这是进阶篇的第一篇文章，设计到高速信号，现在基本都要求四层板及其以上了
-高速信号的重要方面
-
-叠层设计
-阻抗匹配
-信号协议
-模数分离
-
-模数分离由单点接地与多点接地引出，会在下一章进行具体学习
-信号完整性概念：信号在传输过程中能够保持原有形态，准确的到达目标设备。 
-
-
-分析方法
-
-建模和仿真，实际电路测试
-电磁仿真和电路仿真
-
-基础知识
-时域和频域的信号
-
-周期
-上升时间
-频谱
-带宽
-...</p></div><div class="meta cap"><span class="cap" id="post-meta">Posted on&nbsp;<time datetime="2024-12-25T18:19:25.000Z">2024-12-26</time></span></div></article>
 </a></div>
   
   <div class='paginator-wrap dis-select'>
