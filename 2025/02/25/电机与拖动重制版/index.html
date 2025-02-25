@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>电机与拖动重制版 - 无 忧</title>
+
+  
+    <meta name="description" content="第二章，多轴传动单轴电机拖动模型  多轴平动模型题目   解答   补充    同型题   解答 1待加入...  提升下放模型知识点 例题         直流电机(包括电动机与发电机)知识点直流电机的优点 额定值    电动机与发电机的额定功率不同，发电机Pn&#x3D;Un*In，pn为电功率,电动机Pn,为输出的机械功率需要计算输入功率，电功率  电动势与转矩    他励并励直流电机  例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电机与拖动重制版">
+<meta property="og:url" content="http://example.com/2025/02/25/%E7%94%B5%E6%9C%BA%E4%B8%8E%E6%8B%96%E5%8A%A8%E9%87%8D%E5%88%B6%E7%89%88/index.html">
+<meta property="og:site_name" content="无 忧">
+<meta property="og:description" content="第二章，多轴传动单轴电机拖动模型  多轴平动模型题目   解答   补充    同型题   解答 1待加入...  提升下放模型知识点 例题         直流电机(包括电动机与发电机)知识点直流电机的优点 额定值    电动机与发电机的额定功率不同，发电机Pn&#x3D;Un*In，pn为电功率,电动机Pn,为输出的机械功率需要计算输入功率，电功率  电动势与转矩    他励并励直流电机  例">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/fd3fbb5cc2e37a9115422c9b1f51b0d.jpg">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225104436.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225105332.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/a36f9a7b38370885956b3afac4c9343.jpg">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/ee5a4c30877de9da6faec91600be7e5.jpg">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225164006.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225164118.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225233726.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225233752.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225171132.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225234017.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/19f886854db2105cf112b023107f743.jpg">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226000612.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226000533.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226001758.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226002605.png">
+<meta property="og:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226005042.png">
+<meta property="article:published_time" content="2025-02-25T01:49:58.000Z">
+<meta property="article:modified_time" content="2025-02-25T17:01:37.419Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="课程">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/fd3fbb5cc2e37a9115422c9b1f51b0d.jpg">
+  
+  
+  
+  <meta name="keywords" content="课程">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/202406121839794.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">无 忧</div><div class="sub normal cap">YOU ARE MY ANGLE</div><div class="sub hover cap" style="opacity:0"> I miss you</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/about/">关于</a><a class="nav-item" href="/achievement/">成就</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">电机与拖动重制版</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0%EF%BC%8C%E5%A4%9A%E8%BD%B4%E4%BC%A0%E5%8A%A8"><span class="toc-text">第二章，多轴传动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BD%B4%E7%94%B5%E6%9C%BA%E6%8B%96%E5%8A%A8%E6%A8%A1%E5%9E%8B"><span class="toc-text">单轴电机拖动模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BD%B4%E5%B9%B3%E5%8A%A8%E6%A8%A1%E5%9E%8B"><span class="toc-text">多轴平动模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E5%8D%87%E4%B8%8B%E6%94%BE%E6%A8%A1%E5%9E%8B"><span class="toc-text">提升下放模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA-%E5%8C%85%E6%8B%AC%E7%94%B5%E5%8A%A8%E6%9C%BA%E4%B8%8E%E5%8F%91%E7%94%B5%E6%9C%BA"><span class="toc-text">直流电机(包括电动机与发电机)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%9D%E5%AE%9A%E5%80%BC"><span class="toc-text">额定值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%8A%A8%E5%8A%BF%E4%B8%8E%E8%BD%AC%E7%9F%A9"><span class="toc-text">电动势与转矩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%96%E5%8A%B1%E5%B9%B6%E5%8A%B1%E7%9B%B4%E6%B5%81%E7%94%B5%E6%9C%BA"><span class="toc-text">他励并励直流电机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E7%AD%94"><span class="toc-text">解答</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E8%AE%A1%E7%AE%97%E7%94%B5%E6%9E%A2%E7%94%B5%E6%B5%81-I-a"><span class="toc-text">（1）计算电枢电流 $ I_a $</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E8%AE%A1%E7%AE%97%E6%84%9F%E5%BA%94%E7%94%B5%E5%8A%A8%E5%8A%BF-E-a"><span class="toc-text">（2）计算感应电动势 $ E_a $</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E8%AE%A1%E7%AE%97%E8%BD%AC%E9%80%9F-n"><span class="toc-text">（3）计算转速 $ n $</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C"><span class="toc-text">最终结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0"><span class="toc-text">第四章</span></a></li></ol></div></div></widget>
+
+
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="Search"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">No Results!</div></div></div></widget>
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">
+    <span>Posted on&nbsp;<time datetime="2025-02-25T01:49:58.000Z">2025-02-25</time></span>
+    
+    <span>Updated on&nbsp;<time datetime="2025-02-25T17:01:37.419Z">2025-02-26</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>电机与拖动重制版</span></h1>
+<h2 id="第二章，多轴传动"><a href="#第二章，多轴传动" class="headerlink" title="第二章，多轴传动"></a>第二章，多轴传动</h2><h3 id="单轴电机拖动模型"><a href="#单轴电机拖动模型" class="headerlink" title="单轴电机拖动模型"></a>单轴电机拖动模型</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/fd3fbb5cc2e37a9115422c9b1f51b0d.jpg"/></div></div>
+
+<h3 id="多轴平动模型"><a href="#多轴平动模型" class="headerlink" title="多轴平动模型"></a>多轴平动模型</h3><p>题目</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225104436.png"/></div></div>
+
+<p>解答</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225105332.png"/></div></div>
+
+<p>补充</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/a36f9a7b38370885956b3afac4c9343.jpg"/></div></div>
+
+
+<p>同型题</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/ee5a4c30877de9da6faec91600be7e5.jpg"/></div></div>
+
+<p>解答</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待加入...</span><br></pre></td></tr></table></figure>
+
+<h3 id="提升下放模型"><a href="#提升下放模型" class="headerlink" title="提升下放模型"></a>提升下放模型</h3><p>知识点</p>
+<p>例题</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225164006.png"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225164118.png"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225233726.png"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225233752.png"/></div></div>
+
+<h2 id="直流电机-包括电动机与发电机"><a href="#直流电机-包括电动机与发电机" class="headerlink" title="直流电机(包括电动机与发电机)"></a>直流电机(包括电动机与发电机)</h2><p>知识点<br>直流电机的优点</p>
+<h3 id="额定值"><a href="#额定值" class="headerlink" title="额定值"></a>额定值</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225171132.png"/></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250225234017.png"/></div></div>
+<blockquote>
+<p>电动机与发电机的额定功率不同，发电机Pn&#x3D;Un*In，pn为电功率,电动机Pn,为输出的机械功率<br>需要计算输入功率，电功率</p>
+</blockquote>
+<h3 id="电动势与转矩"><a href="#电动势与转矩" class="headerlink" title="电动势与转矩"></a>电动势与转矩</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/19f886854db2105cf112b023107f743.jpg"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226000612.png"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226000533.png"/></div></div>
+
+<h3 id="他励并励直流电机"><a href="#他励并励直流电机" class="headerlink" title="他励并励直流电机"></a>他励并励直流电机</h3><div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226001758.png"/></div></div>
+
+<p>例题</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226002605.png"/></div></div>
+
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://liwuyou66.oss-cn-beijing.aliyuncs.com/img/20250226005042.png"/></div></div>
+
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a><strong>解答</strong></h3><p>已知：</p>
+<ul>
+<li>额定功率：$ P_N &#x3D; 22kW $</li>
+<li>额定电压：$ U_N &#x3D; 220V $</li>
+<li>额定电流：$ I_N &#x3D; 115A $</li>
+<li>额定转速：$ n_N &#x3D; 1500r&#x2F;min $</li>
+<li>电枢回路总电阻：$ R_a &#x3D; 0.1\Omega $</li>
+<li>负载转矩：$ T_L &#x3D; 0.85T_N $</li>
+</ul>
+<hr>
+<h3 id="（1）计算电枢电流-I-a"><a href="#（1）计算电枢电流-I-a" class="headerlink" title="（1）计算电枢电流 $ I_a $"></a><strong>（1）计算电枢电流 $ I_a $</strong></h3><p>在他励直流电动机中，若励磁电流不变，则磁通 $ \Phi $ 近似恒定，电磁转矩 $ T $ 与电枢电流 $ I_a $ 成正比：<br>$$<br>T_N &#x3D; C_t \cdot \Phi_N \cdot I_N<br>$$<br>$$<br>T_L &#x3D; 0.85T_N &#x3D; C_t \cdot \Phi_N \cdot I_a<br>$$<br>两式相除，得：<br>$$<br>I_a &#x3D; 0.85 I_N &#x3D; 0.85 \times 115 &#x3D; 97.75 A<br>$$</p>
+<hr>
+<h3 id="（2）计算感应电动势-E-a"><a href="#（2）计算感应电动势-E-a" class="headerlink" title="（2）计算感应电动势 $ E_a $"></a><strong>（2）计算感应电动势 $ E_a $</strong></h3><p>感应电动势计算公式：<br>$$<br>E_a &#x3D; U_N - R_a I_a<br>$$<br>代入数值：<br>$$<br>E_a &#x3D; 220 - 0.1 \times 97.75 &#x3D; 210.225V<br>$$</p>
+<hr>
+<h3 id="（3）计算转速-n"><a href="#（3）计算转速-n" class="headerlink" title="（3）计算转速 $ n $"></a><strong>（3）计算转速 $ n $</strong></h3><p>在他励电动机中，转速与感应电动势成正比：<br>$$<br>n &#x3D; \frac{E_a}{E_{aN}} \cdot n_N<br>$$<br>其中，额定状态下的感应电动势：<br>$$<br>E_{aN} &#x3D; U_N - R_a I_N &#x3D; 220 - 0.1 \times 115 &#x3D; 208.5V<br>$$<br>因此：<br>$$<br>n &#x3D; \frac{210.225}{208.5} \times 1500 &#x3D; 1513.9 \text{ r&#x2F;min}<br>$$</p>
+<hr>
+<h3 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a><strong>最终结果</strong></h3><ul>
+<li><strong>电枢电流</strong>：$ I_a &#x3D; 97.75A $</li>
+<li><strong>感应电动势</strong>：$ E_a &#x3D; 210.225V $</li>
+<li><strong>转速</strong>：$ n &#x3D; 1513.9 \text{ r&#x2F;min} $</li>
+</ul>
+<p><strong>结论</strong>：由于负载转矩小于额定转矩，电枢电流减小，使得电枢电阻压降变小，电动势增大，因此转速略微上升。</p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>License</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">Older</div><a href="/2025/02/17/python%E5%B0%8F%E6%B8%B8%E6%88%8F-%E4%BA%95%E5%AD%97%E6%A3%8B%EF%BC%88%E5%8F%8C%E4%BA%BA%E5%AF%B9%E5%BC%88%E7%89%88%EF%BC%89/">python小游戏-井字棋（双人对弈版）</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@anonymity</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.20.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.20.0';
+  stellar.config = {
+    date_suffix: {
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
