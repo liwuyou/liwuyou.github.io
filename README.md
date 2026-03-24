@@ -5,7 +5,8 @@
 #### Step1： fork 本项目至你的仓库
 
 * 点击本页面的 Fork 按钮  
-* Repository name 填写你的项目名称，可随意填写  
+* Repository name 填写你的项目名称，可随意填写 
+* 注意，这里我实际测试发现，仓库名称不能是随意的，得是你的用户名+github.io.我的用户名是github，所以仓库名称就是 **liwuyou.github.io**
 * 点击 Create fork    
 
 #### Step2： 配置源域名
